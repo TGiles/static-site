@@ -1,4 +1,5 @@
 const cleanCSS = require('clean-css');
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 const extractExcerpt = (article) => {
     if (!article.hasOwnProperty('templateContent')) {
@@ -29,6 +30,15 @@ const extractExcerpt = (article) => {
 }
 
 module.exports = (eleventyConfig) => {
+    const markdownIt = require('markdown-it');
+    const markdownItAttrs = require('markdown-it-attrs');
+    let options = {
+        html: true,
+        breaks: false,
+        linkify: true
+    };
+    let markdownLib = markdownIt(options).use(markdownItAttrs);
+    eleventyConfig.setLibrary('md', markdownLib);
     eleventyConfig.addFilter('dateIso', date => {
         let _date = new Date(date);
         return _date.toISOString();
@@ -51,4 +61,6 @@ module.exports = (eleventyConfig) => {
         };
         return new cleanCSS(options).minify(code).styles;
     });
+
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 }
