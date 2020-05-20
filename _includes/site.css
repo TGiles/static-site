@@ -1,21 +1,72 @@
+:root {
+    --base-font: 1rem;
+    --font-125: calc(var(--base-font) * 1.25);
+    --font-150: calc(var(--base-font) * 1.563);
+    --font-175: calc(var(--base-font) * 1.953);
+    --font-200: calc(var(--base-font) * 2.441);
+    --font-225: calc(var(--base-font) * 3.052);
+    --line-height: 1.55;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: black;
+    color: white;
+    scrollbar-color: dark;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-nav,
-code {
+h6 {
     font-family: 'Hack'
+}
+
+h1 {
+    margin-bottom: 0.8rem;
+    font-size: var(--font-200);
+}
+
+h2 {
+    margin-top: 2.441rem;
+    margin-bottom: 0.8rem;
+    font-size: var(--font-175);
+}
+
+h3 {
+    font-size: var(--font-150);
+}
+
+nav, code {
+    font-family: 'Hack';
 }
 
 p {
     font-family: 'Muli';
+    font-size: var(--base-font);
+    line-height: var(--line-height);
+    margin: 1rem auto;
+}
+
+p.leader-paragraph {
+    font-size: var(--font-150);
 }
 
 body {
     display: grid;
-    grid-template-columns: 0.18fr 1fr;
+    grid-template-columns: 0.15fr 0.75fr 0.15fr;
+    text-align: left;
+    margin: 0;
 }
 
 main {
@@ -27,6 +78,62 @@ footer {
     font-family: 'Muli';
 }
 
+footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
 nav {
     position: fixed;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+nav a:focus, nav a:hover {
+    background-color: gray;
+}
+
+nav a {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+nav a p {
+    margin: auto 0.5rem;
+}
+nav a i {
+    font-size: var(--font-150);
+}
+
+img[src="/img/profile.jpg"] {    
+    width: 100%;
+    border-radius: 50%;
+}
+
+div.profile {
+    grid-column: 3 / 3;
+    grid-row: 1 / 1;
+    margin-top: 1.563rem;
+}
+
+div.profile ul {
+    list-style: none;
+}
+
+div.profile i {
+    font-size: var(--font-200);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
 }
