@@ -1,0 +1,27 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "dev": "npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TGiles/static-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TGiles/static-site/issues"
+  },
+  "homepage": "https://github.com/TGiles/static-site#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "clean-css": "^4.2.3"
+  }
+}

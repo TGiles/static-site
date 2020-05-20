@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+    <!-- capture the CSS content as a Nunjucks variable -->
+    {% set css %}
+        {% include "site.css" %}
+    {% endset %}
+    <!-- feed it through the cssmin filter to minify-->
+    <style>
+        {{ css | cssmin | safe }}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/Home">Home</a>
+        <a href="/About">About</a>
+    </header>
+    <main>
+        {{ content | safe }}
+    </main>
+    <footer>
+        Tim Giles © 2020
+    </footer>
+</body>
+</html>
