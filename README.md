@@ -2,12 +2,14 @@
 
 This is the new home for my personal website.
 Using 11ty, I've converted my old website and added a blog section to it!
+Huge thanks to [Jon Keeping](https://github.com/JonUK) and his blog post on [creating a blog with Eleventy!](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/)
 
 ## But your old site worked fine, what gives?
 
 I enjoy learning new tech and discovering if I like the new way of doing things.
 Other than little content fixes, I haven't updated my personal site in years!
 I suppose it felt like time to do an overhaul and pick up some more skills in the process.
+I also wanted to add a blog so that I can spend more time writing my thoughts/notes in a way that can be beneficial to other people.
 
 ## Fair enough, but why 11ty? Why not <insert other static site generator>?
 
