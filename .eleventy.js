@@ -68,4 +68,6 @@ module.exports = (eleventyConfig) => {
     });
 
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+    eleventyConfig.addPassthroughCopy("img");
 }
