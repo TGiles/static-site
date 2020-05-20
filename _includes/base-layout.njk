@@ -22,14 +22,14 @@
             <li><a href="/#About">About</a></li>
             <li><a href="/#Projects">Projects</a></li>
             <li><a href="/#Contact">Contact</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/blog-home">Blog</a></li>
         </ul>
     </nav>
     <main>
         {{ content | safe }}
     </main>
     <footer>
-        Tim Giles © 2020
+        Tim Giles © {{ page.date | copyrightYear }}
     </footer>
 </body>
 </html>

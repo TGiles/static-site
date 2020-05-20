@@ -49,6 +49,11 @@ module.exports = (eleventyConfig) => {
         return _date.toLocaleDateString();
     });
 
+    eleventyConfig.addFilter('copyrightYear', date => {
+        let _date = new Date(date);
+        return _date.getFullYear();
+    })
+
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
     eleventyConfig.addFilter('cssmin', code => {
