@@ -24,6 +24,7 @@ main {
 
 footer {
     grid-column: 2 / 2;
+    font-family: 'Muli';
 }
 
 nav {
