@@ -1,3 +1,30 @@
-body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav {
     font-family: 'Hack'
+}
+
+p {
+    font-family: 'Muli';
+}
+
+body {
+    display: grid;
+    grid-template-columns: 0.18fr 1fr;
+}
+
+main {
+    grid-column: 2 / 2;
+}
+
+footer {
+    grid-column: 2 / 2;
+}
+
+nav {
+    position: fixed;
 }
