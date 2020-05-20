@@ -1,8 +1,14 @@
-# Tim Giles Jr.
+---
+layout: base-layout.njk
+title: Tim Giles Jr
+tags: ['navigation']
+---
+
+# Tim Giles Jr
 
 Software Engineer | Roboticist | AI | Musician | Photographer
 
-## About Me
+## About Me {id=About}
 
 I am a graduate from [Christopher Newport University](https://cnu.edu) with a B.S. ('16) and M.S. ('18) in Computer Science.
 I create products that users want and enjoy using.
@@ -34,7 +40,7 @@ Some of my shots can be seen on my [Flickr](https://www.flickr.com/photos/121209
 I think one day I'd like to run a record label.
 I spent way too much time listening and analyzing music, so maybe that's a way to expand myself.
 
-## Featured Projects
+## Featured Projects {id=Projects}
 
 ### [auto-lighthouse](https://www.npmjs.com/package/auto-lighthouse)
 
@@ -61,6 +67,6 @@ The stack for the application consisted of JavaScript, Java, PHP, MySQL, Bootstr
 The outcome of my capstone is a force-directed graph that shows citation relationships between papers.
 This allows a user to visually see which papers are important in a citation network.
 
-# Contact Me
+# Contact Me {id=Contact}
 
 Feel free to email me at [tim@tgiles.dev](mailto:tim@tgiles.dev) for more information, or if I'm a good fit for your organization!
