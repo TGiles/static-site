@@ -1,12 +1,12 @@
 ---
-layout: base-layout.njk
+layout: home-layout.njk
 title: Tim Giles Jr
 tags: ['navigation']
 ---
 
 # Tim Giles Jr
 
-Software Engineer | Roboticist | AI | Musician | Photographer
+Software Engineer | Roboticist | AI | Musician | Photographer {class=leader-paragraph}
 
 ## About Me {id=About}
 
@@ -67,6 +67,6 @@ The stack for the application consisted of JavaScript, Java, PHP, MySQL, Bootstr
 The outcome of my capstone is a force-directed graph that shows citation relationships between papers.
 This allows a user to visually see which papers are important in a citation network.
 
-# Contact Me {id=Contact}
+## Contact Me {id=Contact}
 
 Feel free to email me at [tim@tgiles.dev](mailto:tim@tgiles.dev) for more information, or if I'm a good fit for your organization!
