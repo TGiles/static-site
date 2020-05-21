@@ -30,11 +30,7 @@ const extractExcerpt = (article) => {
 };
 
 const readingTime = article => {
-    if (!article.hasOwnProperty('templateContent')) {
-        console.warn('Failed to determine reading time: Document has no property "templateContent".');
-        return null;
-    }
-    const htmlContent = article.templateContent;
+    const htmlContent = typeof article === 'string' ? article : article.templateContent;
     // speed is 275 WPM
     const readingSpeed = 275;
 
@@ -55,9 +51,9 @@ const readingTime = article => {
     const min = minText + minImages;
     estimatedTime = min;
     if (estimatedTime === 1) {
-        return `1 minute`;
+        return `About ${estimatedTime} minute read`;
     } else {
-        return `${estimatedTime} minutes`;
+        return `About ${estimatedTime} minutes read`;
     }
 };
 
