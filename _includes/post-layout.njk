@@ -1,6 +1,9 @@
----
+--- 
 layout: base-layout.njk
 ---
+<p>
+    {{ content | readingTime }}
+</p>
 <article>
     {{ content | safe }}
 </article>
