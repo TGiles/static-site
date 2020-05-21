@@ -13,9 +13,11 @@ pagination:
         </h1>
         <p>
         {{ post | readingTime }}
-        </p>
-        <p>
+        |
         <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable}}</time>
+        |
+        {{ post | joinTopics }}
+        </p>
         <p>
         {% excerpt post %}
         </p>

@@ -84,6 +84,14 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addFilter('readingTime', article => readingTime(article));
 
+    eleventyConfig.addFilter('joinTopics', post => {
+        if (!post.data.topics || post.data.topics.length === 0) {
+            console.warn('No topics associated with this post!', post);
+            return null;
+        }
+        return post.data.topics.join(', ');
+    });
+
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
     eleventyConfig.addFilter('cssmin', code => {
