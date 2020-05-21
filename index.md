@@ -40,7 +40,7 @@ Some of my shots can be seen on my [Flickr](https://www.flickr.com/photos/121209
 I think one day I'd like to run a record label.
 I spent way too much time listening and analyzing music, so maybe that's a way to expand myself.
 
-[Download My Resume](/resume/web-resume.html) {class=resume}
+[Download My Resume](/resume/web-resume) {class=resume}
 
 ## Featured Projects {id=Projects}
 
