@@ -54,8 +54,11 @@ const readingTime = article => {
     const minText = Math.ceil(textCount / readingSpeed);
     const min = minText + minImages;
     estimatedTime = min;
-    console.log('est time', estimatedTime);
-    return estimatedTime;
+    if (estimatedTime === 1) {
+        return `1 minute`;
+    } else {
+        return `${estimatedTime} minutes`;
+    }
 };
 
 module.exports = (eleventyConfig) => {
