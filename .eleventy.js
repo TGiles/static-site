@@ -27,7 +27,30 @@ const extractExcerpt = (article) => {
     });
 
     return excerpt;
-}
+};
+
+const readingTime = article => {
+    if (!article.hasOwnProperty('templateContent')) {
+        console.warn('Failed to determine reading time: Document has no property "templateContent".');
+        return null;
+    }
+    const htmlContent = article.templateContent;
+
+    if (!htmlContent) {
+        return `0 minutes`;
+    }
+
+    const content = htmlContent.replace(/(<([^>]+)>)/gi, '');
+    const matches = content.match(/[\u0400-\u04FF]+|\S+\s*/g);
+    const count = matches !== null ? matches.length : 0;
+
+    let estimatedTime;
+
+    const min = Math.ceil(count / 200);
+
+    estimatedTime = min;
+    return estimatedTime;
+};
 
 module.exports = (eleventyConfig) => {
     const markdownIt = require('markdown-it');
@@ -52,7 +75,11 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addFilter('copyrightYear', date => {
         let _date = new Date(date);
         return _date.getFullYear();
-    })
+    });
+
+    eleventyConfig.addFilter('readingTime', article => {
+
+    });
 
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
