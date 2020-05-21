@@ -40,7 +40,7 @@ Some of my shots can be seen on my [Flickr](https://www.flickr.com/photos/121209
 I think one day I'd like to run a record label.
 I spent way too much time listening and analyzing music, so maybe that's a way to expand myself.
 
-[Download My Resume](/resume/web-resume) {class=resume}
+[View my Resume!](/resume/web-resume) {class=resume}
 
 ## Featured Projects {id=Projects}
 
@@ -72,3 +72,5 @@ This allows a user to visually see which papers are important in a citation netw
 ## Contact Me {id=Contact}
 
 Feel free to email me at [tim@tgiles.dev](mailto:tim@tgiles.dev) for more information, or if I'm a good fit for your organization!
+
+[Download My Resume!](/resume/Tim-Giles-Resume.pdf) {class=resume}
