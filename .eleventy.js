@@ -35,6 +35,8 @@ const readingTime = article => {
         return null;
     }
     const htmlContent = article.templateContent;
+    // speed is 275 WPM
+    const readingSpeed = 275;
 
     if (!htmlContent) {
         return `0 minutes`;
@@ -42,13 +44,17 @@ const readingTime = article => {
 
     const content = htmlContent.replace(/(<([^>]+)>)/gi, '');
     const matches = content.match(/[\u0400-\u04FF]+|\S+\s*/g);
-    const count = matches !== null ? matches.length : 0;
+    const textCount = matches !== null ? matches.length : 0;
+    const images = htmlContent.match(/<img>/);
+    const imageCount = images !== null ? images.length : 0;
 
     let estimatedTime;
-
-    const min = Math.ceil(count / 200);
-
+    // Image time is in seconds
+    const minImages = Math.ceil((imageCount * 12) / 60);
+    const minText = Math.ceil(textCount / readingSpeed);
+    const min = minText + minImages;
     estimatedTime = min;
+    console.log('est time', estimatedTime);
     return estimatedTime;
 };
 
@@ -77,9 +83,7 @@ module.exports = (eleventyConfig) => {
         return _date.getFullYear();
     });
 
-    eleventyConfig.addFilter('readingTime', article => {
-
-    });
+    eleventyConfig.addFilter('readingTime', article => readingTime(article));
 
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
