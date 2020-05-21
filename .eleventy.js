@@ -67,7 +67,12 @@ module.exports = (eleventyConfig) => {
         return new cleanCSS(options).minify(code).styles;
     });
 
+    eleventyConfig.setBrowserSyncConfig({
+        open: 'local'
+    });
+
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     eleventyConfig.addPassthroughCopy("img");
+    eleventyConfig.addPassthroughCopy("resume");
 }
