@@ -17,3 +17,10 @@ pagination:
         </p>
     </article>
 {% endfor %}
+
+{% if pagination.href.previous %}
+  <a class="nav-link-prev" href="{{pagination.href.previous}}">Previous Page</a>
+{% endif %}
+{% if pagination.href.next %}
+  <a class="nav-link-next" href="{{pagination.href.next}}">Next Page</a>
+{% endif %}
