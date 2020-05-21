@@ -5,22 +5,40 @@
     --font-175: calc(var(--base-font) * 1.953);
     --font-200: calc(var(--base-font) * 2.441);
     --font-225: calc(var(--base-font) * 3.052);
-    --line-height: 1.55;
+    --line-height: 1.65;
+    --maximum-blue: #40b4c4;
+    --powder-blue: #b4dce7;
+    --african-violet: #b381c5;
+    --old-lavender: #91889b;
+    --raisin-black: #27212e;
+    --hot-pink: #EB64B9;
+    --translucent-roman-silver: #71638570
+
 }
 
 html {
     scroll-behavior: smooth;
-    background-color: black;
+    background-color: #181a1b;
     color: white;
     scrollbar-color: dark;
+}
+::-webkit-scrollbar {
+    background-color: #1c1e1f;
+    color: #c5c1b9;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #2a2c2e;
 }
 
 a {
     color: white;
-    text-decoration: none;
 }
 a:hover, a:focus {
     text-decoration: underline;
+    text-decoration-color: var(--hot-pink);
 }
 
 h1,
@@ -29,12 +47,15 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Hack'
+    font-family: 'Hack';
+    color: var(--powder-blue);
 }
 
 h1 {
     margin-bottom: 0.8rem;
     font-size: var(--font-200);
+    /* color: #9387f7;
+    color: #716385; */
 }
 
 h2 {
@@ -45,6 +66,14 @@ h2 {
 
 h3 {
     font-size: var(--font-150);
+}
+
+h3 > a {
+    color: #b381c5;
+}
+
+h1 > a {
+    color: var(--powder-blue);
 }
 
 nav, code {
@@ -88,19 +117,22 @@ footer ul {
 nav {
     position: fixed;
     height: 100%;
-    background-color: #333;
+    background-color: var(--raisin-black);
     display: flex;
     flex-flow: column nowrap;
 }
 
 nav a:focus, nav a:hover {
-    background-color: gray;
+    filter: brightness(175%);
+    background-color: var(--translucent-roman-silver);
 }
 
 nav a {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    color: #74f6e8;
+    color: #40b4c4;
 }
 
 nav a p {
@@ -127,6 +159,11 @@ div.profile ul {
 
 div.profile i {
     font-size: var(--font-200);
+}
+
+.resume > a {
+    font-size: var(--font-150);
+    color: var(--african-violet);
 }
 
 .visually-hidden {
