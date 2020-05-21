@@ -12,7 +12,7 @@ pagination:
             <a href="{{ post.url | url }}">{{ post.data.title }}</a>
         </h1>
         <p>
-        {{ post | readingTime }} read
+        {{ post | readingTime }}
         </p>
         <p>
         <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable}}</time>
