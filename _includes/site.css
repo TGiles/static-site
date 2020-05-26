@@ -21,6 +21,7 @@ html {
     background-color: #181a1b;
     color: white;
     scrollbar-color: dark;
+    font-family: Muli;
 }
 ::-webkit-scrollbar {
     background-color: #1c1e1f;
@@ -66,8 +67,6 @@ h6 {
 h1 {
     margin-bottom: 0.8rem;
     font-size: var(--font-200);
-    /* color: #9387f7;
-    color: #716385; */
 }
 
 h2 {
