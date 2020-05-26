@@ -1,5 +1,6 @@
 const cleanCSS = require('clean-css');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const extractExcerpt = (article) => {
     if (!article.hasOwnProperty('templateContent')) {
@@ -86,7 +87,7 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addFilter('joinTopics', post => {
         if (!post.data.topics || post.data.topics.length === 0) {
-            console.warn('No topics associated with this post!', post);
+            console.warn('No topics associated with this post!', post.data.title);
             return null;
         }
         return post.data.topics.join(', ');
@@ -110,7 +111,8 @@ module.exports = (eleventyConfig) => {
     });
 
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(syntaxHighlight);
 
-    eleventyConfig.addPassthroughCopy("img");
+    eleventyConfig.addPassthroughCopy("img/**/*.*");
     eleventyConfig.addPassthroughCopy("resume");
 }
