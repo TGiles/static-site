@@ -112,6 +112,9 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+
+  // Instead of going to hackernews,
+  // we want to open our source HTML document
   await page.goto('file://D:/Repos/static-site/_site/resume/web-resume/index.html', {waitUntil: 'networkidle2'});
   await page.pdf({path: 'hn.pdf', format: 'Letter'});
  
@@ -134,14 +137,20 @@ const puppeteer = require('puppeteer');
 const express = require('express');
 
 (async () => {
+    // Spin up express
     const app = express();
 
     // Since we want to host static content, we use
     // express' built in `static` middleware
     app.use(express.static('_site'));
-    const server = app.listen(5001, async() => {
+    const server = app.listen(5001, async () => {
+
+        // Our previous snippet
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
+
+        // We now navigate to localhost
+        // instead of using the file protocol
         await page.goto('http://localhost:5001/resume/web-resume/index.html', { waitUntil: 'networkidle0' });
         await page.pdf({ path: 'hn.pdf', format: 'Letter' });
     
@@ -169,7 +178,7 @@ const express = require('express');
 (async () => {
     const app = express();
     app.use(express.static('_site'));
-    const server = app.listen(5001, async() => {
+    const server = app.listen(5001, async () => {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.goto('http://localhost:5001/resume/web-resume/index.html', { waitUntil: 'networkidle0' });
@@ -207,3 +216,17 @@ We now have the main logic figured out, we just need to extract magic strings an
 This part is where `inquirer` will come in handy.
 By handling all the input and creating a compiled options object, we can pass the options to our main logic.
 Additionally, if we call our CLI with the `--ci` flag then our interface will run the PDF generation automatically.
+
+So I create the options object by asking the following prompts:
+* Enter a file name for generated PDF
+* Enter a destination path for generated PDF
+* Enter the file name of the source HTML document
+* Enter the path of the source HTML document
+* Enter the path to the generated site folder
+* Save responses to .htmltopdf.json?
+
+Inquirer has different prompt formats you can use such as: `input`, `password`, `list`, `checkbox`, `confirm`, and others.
+For my file name prompts, I used the simple text `input` prompt.
+Since entering file paths can be tedious, I wanted prompt format that could speed up this process.
+Luckily, inquirer has some featured plugins and one of these plugins is a [fuzzy path search!](https://github.com/adelsz/inquirer-fuzzy-path)
+
