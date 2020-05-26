@@ -100,9 +100,12 @@ In order to called the generated PDF a success, it has to pass some test.
 In this instance, I have my reference resume PDF that I will compare against.
 > ![Reference Resume](../../../../img/htmlToPdfCI/reference-resume.png)
 
+### Generating the PDF
+
 So we'll go ahead and modify the snippet to create our PDF and we should be done!
 ```js
 const puppeteer = require('puppeteer');
+
 // If you haven't seen this pattern before, this is an
 // immediately invoked function expression (IIFE)
 // https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -150,13 +153,13 @@ const express = require('express');
 })();
 ```
 
-Using this snippet, we are able to generate this pdf
+Using this snippet, we are able to generate the following PDF
 > ![First generated resume](../../../../img/htmlToPdfCI/first-generated-resume.png)
 
 which is better than no generated PDF, but is missing some details.
 First, there are no margins which makes this document look terrible!
-Second, we lost the circles on our contact information!
-Third, we lost the header background!
+Second, we lost the circles on our contact information.
+Third, we lost the header background.
 Let's go ahead and fix this.
 
 ```js
@@ -173,8 +176,10 @@ const express = require('express');
         await page.pdf({ 
             path: 'hn.pdf',
             format: 'Letter',
+
             // printBackground will display our background heading
             printBackground: true,
+
             // Chrome's print to PDF uses these margins
             margin: {
                 top: '0.4 in',
@@ -196,3 +201,9 @@ We go ahead and run this snippet and...
 
 🎉 sweet!
 We now have the main logic figured out, we just need to extract magic strings and variables so that passed parameters create the variables we need!
+
+### Inquirer
+
+This part is where `inquirer` will come in handy.
+By handling all the input and creating a compiled options object, we can pass the options to our main logic.
+Additionally, if we call our CLI with the `--ci` flag then our interface will run the PDF generation automatically.
