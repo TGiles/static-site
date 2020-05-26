@@ -160,6 +160,12 @@ img[src="/img/profile.jpg"] {
     border-radius: 50%;
 }
 
+img {
+    display: block;
+    width: 33%;
+    margin: auto;
+}
+
 div.profile {
     grid-column: 3 / 3;
     grid-row: 1 / 1;
