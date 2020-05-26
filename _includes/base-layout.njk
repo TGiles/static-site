@@ -11,9 +11,13 @@
         {% set css %}
         {% include "site.css" %}
         {% endset %}
+        {% set prism %}
+        {% include "prism-a11y-dark.css" %}
+        {% endset %}
         <!-- feed it through the cssmin filter to minify-->
         <style>
             {{css | cssmin | safe}}
+            {{prism | cssmin | safe}}
         </style>
     </head>
     <body>
