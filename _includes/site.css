@@ -134,6 +134,11 @@ nav {
     flex-flow: column nowrap;
 }
 
+nav > div {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 nav a:focus, nav a:hover {
     filter: brightness(175%);
     background-color: var(--translucent-roman-silver);
