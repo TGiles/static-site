@@ -15,7 +15,6 @@ pagination:
         {{ post | readingTime }}
         |
         <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable}}</time>
-        |
         {{ post | joinTopics }}
         </p>
         <p>
