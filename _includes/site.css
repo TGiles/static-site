@@ -95,7 +95,6 @@ p {
     font-family: 'Muli';
     font-size: var(--base-font);
     line-height: var(--line-height);
-    margin: 1rem auto;
 }
 
 p.leader-paragraph {
