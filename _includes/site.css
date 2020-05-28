@@ -116,6 +116,7 @@ footer {
     grid-column: 2 / 2;
     font-family: 'Muli';
     margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
 }
 
 footer ul {
