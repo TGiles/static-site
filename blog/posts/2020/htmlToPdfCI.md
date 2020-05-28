@@ -1,6 +1,6 @@
 ---
 layout: post-layout.njk
-title: HTML To PDF CI tool
+title: HTML To PDF CI
 date: 2020-05-25
 tags: ['post']
 topics: ['CLI', 'CI', 'Puppeteer', 'NPM']
@@ -157,7 +157,7 @@ const express = require('express');
         await browser.close();
         server.close(() => {
             console.log(`Closing server`);
-        })
+        });
     });
 })();
 ```
