@@ -192,3 +192,29 @@ div.profile i {
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-columns: .05fr .90fr .05fr;
+    }
+    nav {
+        position: relative;
+        grid-column: 1 / span 3;
+        height: auto;
+    }
+    nav > div {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+    }
+    div.profile {
+        grid-column: 2/2;
+        grid-row: 2/2;
+    }
+    div.profile > img[src="/img/profile.jpg"] {
+        width: 30%;
+    }
+    img  {
+        width: 100%;
+    }
+}
