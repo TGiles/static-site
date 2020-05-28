@@ -189,6 +189,10 @@ div.profile i {
     color: var(--african-violet);
 }
 
+article {
+    display: grid;
+}
+
 .visually-hidden {
     position: absolute !important;
     height: 1px; 
