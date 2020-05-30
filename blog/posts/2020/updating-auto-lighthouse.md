@@ -10,6 +10,7 @@ topics: ['CLI', 'accessibility', 'Lighthouse', 'automation']
 
 Recently my auto-lighthouse package has been receiving more attention from the community at large.
 
+## What is auto-lighthouse?
 
 ## Fixing the broken blacklist regex
 
