@@ -2,7 +2,7 @@
 layout: post-layout.njk
 title: HTML To PDF CI
 date: 2020-05-25
-tags: ['post']
+tags: ['post', 'CLI', 'CI', 'Puppeteer', 'NPM']
 topics: ['CLI', 'CI', 'Puppeteer', 'NPM']
 ---
 

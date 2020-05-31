@@ -2,7 +2,7 @@
 layout: post-layout.njk
 title: Adding new features to auto-lighthouse
 date: 2020-05-29
-tags: ['post']
+tags: ['post', 'CLI', 'accessibility', 'Lighthouse', 'automation']
 topics: ['CLI', 'accessibility', 'Lighthouse', 'automation']
 ---
 
@@ -11,6 +11,8 @@ topics: ['CLI', 'accessibility', 'Lighthouse', 'automation']
 Recently my auto-lighthouse package has been receiving more attention from the community at large.
 
 ## What is auto-lighthouse?
+
+Auto-lighthouse is a command line interface tool that runs mobile and desktop Lighthouse audits across an entire domain.
 
 ## Fixing the broken blacklist regex
 
