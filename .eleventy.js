@@ -85,13 +85,23 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addFilter('readingTime', article => readingTime(article));
 
-    eleventyConfig.addFilter('joinTopics', post => {
+    eleventyConfig.addFilter('blogJoinTopics', post => {
         let pipe = '| ';
         if (!post.data.topics || post.data.topics.length === 0) {
             console.warn('No topics associated with this post!', post.data.title);
             return null;
         }
         let joinedTopics = post.data.topics.join(', ');
+        return pipe + joinedTopics;
+    });
+
+    eleventyConfig.addFilter('joinTopics', topics => {
+        let pipe = '| ';
+        if (!topics || topics.length === 0) {
+            console.warn('No topics associated with this post!');
+            return null;
+        }
+        let joinedTopics = topics.join(', ');
         return pipe + joinedTopics;
     });
 
