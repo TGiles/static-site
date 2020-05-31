@@ -59,6 +59,21 @@ a.nav-link-prev {
 a.nav-link-home {
     font-size: var(--font-150);
 }
+a.skip-to-main {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+a.skip-to-main:focus {
+    position: relative;
+    left: auto;
+    width: auto;
+    height: auto;
+    visibility: block;
+}
 
 h1,
 h2,
