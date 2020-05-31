@@ -1,0 +1,17 @@
+<nav class="post-navigation">
+    {% if pagination.href.previous %}
+      <a class="nav-link-prev" href="{{pagination.href.previous}}">Previous Page</a>
+    {% endif %}
+    {% if not pagination.href.previous %}
+      <span class="strike-through">Previous Page</span>
+    {% endif %}
+    <div class="page-count">
+      Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+    </div>
+    {% if pagination.href.next %}
+      <a class="nav-link-next" href="{{pagination.href.next}}">Next Page</a>
+    {% endif %}
+    {% if not pagination.href.next %}
+      <span class="strike-through">Next Page</span>
+    {% endif %}
+</nav>

@@ -3,9 +3,17 @@ layout: base-layout.njk
 ---
 <p>
     {{ content | readingTime }}
+    {{ topics | joinTopics }}
 </p>
+<a class="nav-link-home" href="/blog-home">Back to all posts</a>
 <article>
     {{ content | safe }}
 </article>
 
-<a class="nav-link-prev" href="/blog-home">All posts</a>
+{# {% set postList = collections.post %}
+{% if collections.post.length %}
+    {% for item in postList | reverse %}
+        {{item.data.title}}
+    {% endfor %}
+{% endif %} #}
+<a class="nav-link-home" href="/blog-home">Back to all posts</a>
