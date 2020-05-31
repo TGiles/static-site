@@ -18,7 +18,14 @@ pagination:
       {{ post | readingTime }}
       |
       <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable}}</time>
-      {{ post | blogJoinTopics }}
+      {% if post.data.tags.length > 1%}
+      | Topics:
+      {% endif %}
+      {% for topic in post.data.tags %}
+        {% if topic !== 'post'%}
+        <a href="blog/tags/{{topic}}">{{topic}}</a>
+        {% endif %}
+      {% endfor %}
     </p>
     <p>
       {% excerpt post %}
