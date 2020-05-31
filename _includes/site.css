@@ -46,12 +46,18 @@ a.nav-link-next {
     font-size: var(--font-150);
     display: flex;
     justify-content: flex-end;
+    padding: 1rem;
 }
 
 a.nav-link-prev {
     font-size: var(--font-150);
     display: flex;
     justify-content: flex-start;
+    padding: 1rem;
+}
+
+a.nav-link-home {
+    font-size: var(--font-150);
 }
 
 h1,
@@ -159,6 +165,16 @@ nav a i {
     font-size: var(--font-150);
 }
 
+nav.post-navigation {
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+nav.post-navigation > span {
+    align-self: center;
+}
+
 img[src="/img/profile.jpg"] {    
     width: 100%;
     border-radius: 50%;
@@ -182,6 +198,10 @@ div.profile ul {
 
 div.profile i {
     font-size: var(--font-200);
+}
+
+div.page-count {
+    align-self: center;
 }
 
 .resume > a {
