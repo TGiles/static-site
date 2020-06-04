@@ -9,6 +9,7 @@ layout: base-layout.njk
     {% for topic in topics %}
         <a href="/blog/tags/{{topic}}">{{topic}}</a>
     {% endfor %}
+    | <a href="https://github.com/TGiles/static-site/blob/master/{{page.inputPath}}">Edit post</a>
 </p>
 <a class="nav-link-home" href="/blog">Back to all posts</a>
 <article>
