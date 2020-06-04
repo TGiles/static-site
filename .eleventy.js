@@ -127,4 +127,18 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPassthroughCopy("img/**/*.*");
     eleventyConfig.addPassthroughCopy("resume");
+
+    eleventyConfig.addCollection('post', collection => {
+        const posts = collection.getFilteredByTag('post');
+
+        for( let i = 0; i < posts.length; i++) {
+            const prevPost = posts[i - 1];
+            const nextPost = posts[i + 1];
+
+            posts[i].data["prevPost"] = prevPost;
+            posts[i].data["nextPost"] = nextPost;
+        }
+
+        return posts.reverse();
+    });
 }
