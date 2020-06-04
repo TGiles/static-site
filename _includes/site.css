@@ -205,6 +205,30 @@ nav.post-navigation > span {
     align-self: center;
 }
 
+nav.related-posts {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    border: 2px solid var(--old-lavender);
+    border-radius: 1rem;
+    height: auto;
+    position: relative;
+    flex-flow: row wrap;
+}
+nav.related-posts > a:first-of-type {
+    border-radius: 1rem 0 0 1rem;
+}
+nav.related-posts > a:last-of-type {
+    border-radius: 0 1rem 1rem 0;
+}
+
+a > strong {
+    padding: 1rem;
+}
+a > strong + p {
+    padding: 1rem;
+}
+
 img[src="/img/profile.jpg"] {    
     width: 100%;
     border-radius: 50%;

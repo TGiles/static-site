@@ -11,8 +11,22 @@ layout: base-layout.njk
     {% endfor %}
     | <a href="https://github.com/TGiles/static-site/blob/master/{{page.inputPath}}">Edit post</a>
 </p>
-<a class="nav-link-home" href="/blog">Back to all posts</a>
 <article>
     {{ content | safe }}
 </article>
-<a class="nav-link-home" href="/blog">Back to all posts</a>
+{% if prevPost or nextPost %}
+    <nav class="related-posts">
+    {% if prevPost %}
+        <a href="{{prevPost.url}}">
+            <strong>Previous: </strong>
+            <p>{{prevPost.data.title}}</p>
+        </a>
+    {% endif %}
+    {% if nextPost %}
+        <a href="{{nextPost.url}}">
+        <strong>Next: </strong>
+        <p>{{nextPost.data.title}}</p>
+        </a>
+    {% endif %}
+    </nav>
+{% endif %}
