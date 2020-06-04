@@ -111,7 +111,7 @@ h3 {
 }
 
 h3 > a {
-    color: #b381c5;
+    color: var(--maximum-blue);
 }
 
 h1 > a {
