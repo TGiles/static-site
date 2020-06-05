@@ -207,6 +207,11 @@ nav.post-navigation {
 
 nav.post-navigation > span {
     align-self: center;
+    padding: 1rem;
+}
+
+nav.post-navigation > div.page-count {
+    padding: 1rem;
 }
 
 nav.related-posts {
