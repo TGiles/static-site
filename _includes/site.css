@@ -214,6 +214,7 @@ nav.post-navigation > div.page-count {
     padding: 1rem;
 }
 
+
 nav.related-posts {
     display: grid;
     grid-template-columns: auto;
@@ -224,11 +225,16 @@ nav.related-posts {
     position: relative;
     flex-flow: row wrap;
 }
-nav.related-posts > a:first-of-type {
+
+nav.related-posts > a:first-child+a:last-child {
+    border-radius: 0 1rem 1rem 0;
+}
+
+nav.related-posts > a:first-child {
     border-radius: 1rem 0 0 1rem;
 }
-nav.related-posts > a:last-of-type {
-    border-radius: 0 1rem 1rem 0;
+nav.related-posts > a:last-child {
+    border-radius: 1rem;
 }
 
 a > strong {
