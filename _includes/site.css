@@ -138,7 +138,7 @@ p.leader-paragraph {
 
 body {
     display: grid;
-    grid-template-columns: 0.15fr 0.75fr 0.15fr;
+    grid-template-columns: 0.25fr 0.50fr 0.25fr;
     text-align: left;
     margin: 0;
 }
