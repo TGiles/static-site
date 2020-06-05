@@ -9,7 +9,7 @@ layout: base-layout.njk
     {% for topic in topics %}
         <a href="/blog/tags/{{topic}}">{{topic}}</a>
     {% endfor %}
-    | <a href="https://github.com/TGiles/static-site/blob/master/{{page.inputPath}}">Edit post</a>
+    | <a href="https://github.com/TGiles/static-site/blob/master/{{page.inputPath}}">Edit post <i class="fab fa-github"></i></a>
 </p>
 <article>
     {{ content | safe }}
@@ -17,13 +17,13 @@ layout: base-layout.njk
 {% if prevPost or nextPost %}
     <nav class="related-posts">
     {% if prevPost %}
-        <a href="{{prevPost.url}}">
+        <a class="previous-post" href="{{prevPost.url}}">
             <strong>Previous: </strong>
             <p>{{prevPost.data.title}}</p>
         </a>
     {% endif %}
     {% if nextPost %}
-        <a href="{{nextPost.url}}">
+        <a class="next-post" href="{{nextPost.url}}">
         <strong>Next: </strong>
         <p>{{nextPost.data.title}}</p>
         </a>
