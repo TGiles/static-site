@@ -36,6 +36,10 @@ html {
     background-color: #2a2c2e;
 }
 
+.strike-through {
+    text-decoration: line-through;
+}
+
 a {
     color: white;
     text-decoration: none;
