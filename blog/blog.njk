@@ -23,7 +23,7 @@ pagination:
       {% endif %}
       {% for topic in post.data.tags %}
         {% if topic !== 'post'%}
-        <a href="blog/tags/{{topic}}">{{topic}}</a>
+        <a href="/blog/tags/{{topic}}">{{topic}}</a>
         {% endif %}
       {% endfor %}
     </p>
