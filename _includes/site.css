@@ -261,8 +261,9 @@ img[src="/img/profile.jpg"] {
 
 img {
     display: block;
-    width: 50%;
     margin: auto;
+    margin-bottom: 1rem;
+    width: auto;
 }
 
 div.profile {
