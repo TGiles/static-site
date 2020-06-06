@@ -135,6 +135,10 @@ p {
     line-height: var(--line-height);
 }
 
+ul {
+    line-height: var(--line-height);
+}
+
 p.leader-paragraph {
     font-size: var(--font-150);
 }
