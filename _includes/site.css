@@ -176,6 +176,10 @@ nav {
     flex-flow: column nowrap;
 }
 
+nav.sidebar-navigation {
+    grid-row: 1/3;
+}
+
 nav > div {
     display: flex;
     flex-flow: column nowrap;
