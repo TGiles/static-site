@@ -71,6 +71,6 @@ This allows a user to visually see which papers are important in a citation netw
 
 ## Contact Me {id=Contact}
 
-Feel free to email me at [tim@tgiles.dev](mailto:tim@tgiles.dev) for more information, or if I'm a good fit for your organization!
+Feel free to email me at [tim@tgiles.dev](mailto:tim@tgiles.dev) for more information or if I'm a good fit for your organization!
 
 [Download My Resume!](/resume/Tim-Giles-Resume.pdf) {class=resume}
