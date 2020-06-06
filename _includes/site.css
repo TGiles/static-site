@@ -306,10 +306,18 @@ article {
     html {
         font-size: var(--base-font);
     }
-    nav {
+    nav.sidebar-navigation {
         position: relative;
         grid-column: 1 / span 3;
         height: auto;
+        margin-right: unset;
+    }
+    nav.post-navigation {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 1rem;
+        position: initial;
+        justify-items: center;
     }
     nav > div {
         display: flex;
