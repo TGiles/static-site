@@ -24,6 +24,10 @@ html {
     color: white;
     scrollbar-color: dark;
     font-family: Muli;
+    font-size: var(--font-125);
+    line-height: var(--line-height);
+    height: 100vh;
+    width: 100vw;
 }
 ::-webkit-scrollbar {
     background-color: #1c1e1f;
