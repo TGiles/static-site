@@ -132,7 +132,6 @@ nav, code {
 
 p {
     font-family: 'Muli';
-    font-size: var(--base-font);
     line-height: var(--line-height);
 }
 
