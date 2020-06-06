@@ -211,9 +211,8 @@ nav a i {
 }
 
 nav.post-navigation {
-    position: relative;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 nav.post-navigation > span {
