@@ -303,8 +303,8 @@ article {
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        grid-template-columns: .05fr .90fr .05fr;
+    html {
+        font-size: var(--base-font);
     }
     nav {
         position: relative;
