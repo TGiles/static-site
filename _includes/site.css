@@ -170,7 +170,6 @@ footer ul {
 }
 
 nav {
-    position: fixed;
     height: 100%;
     background-color: var(--raisin-black);
     display: flex;
