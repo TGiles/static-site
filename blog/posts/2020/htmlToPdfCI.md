@@ -10,6 +10,7 @@ topics: ['CLI', 'CI', 'Puppeteer', 'NPM']
 
 ## Why I created this tool
 
+![HTML to PDF CI tool in action](/img/htmlToPdfCI/app.gif)
 In the process of creating my new static site, I noticed I was regenerating my resume PDF whenever I updated the source HTML.
 Since the PDF is derivative of the HTML, I didn't want to maintain two sources of truth.
 My friend, [Dylan](https://dylansheffer.com), suggested that I create a CI module to generate this PDF on build.
