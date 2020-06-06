@@ -8,6 +8,7 @@ topics: ['CLI', 'accessibility', 'Lighthouse', 'automation']
 
 # Fixing up auto-lighthouse
 
+![auto-lighthouse running an audit](/img/updating-auto-lighthouse/auto-lighthouse.gif)
 Recently my auto-lighthouse package has been receiving more attention from the community at large.
 
 ## What is auto-lighthouse?
