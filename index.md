@@ -1,6 +1,6 @@
 ---
 layout: home-layout.njk
-title: Tim Giles Jr
+title: Tim Giles Jr - Full Stack Developer
 tags: ['navigation']
 ---
 
