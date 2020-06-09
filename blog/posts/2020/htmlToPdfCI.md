@@ -17,7 +17,7 @@ My friend, [Dylan](https://dylansheffer.com), suggested that I create a CI modul
 We both have web based resumes and figured this was something that could be useful to others as well.
 It seemed like a straightforward task, so I started planning and designing what this tool would do.
 
-If you just want to see the source code, you can view it on [our weekend project's GitHub!](https://github.com/our-weekend-project/html-to-pdf-ci)
+If you only want to see the source code, you can view it on [our weekend project's GitHub!](https://github.com/our-weekend-project/html-to-pdf-ci)
 Our weekend project is an organization that some friends and I created for projects that we can all easily contribute to.
 
 ## Requirements of the module
@@ -25,7 +25,7 @@ Our weekend project is an organization that some friends and I created for proje
 ### Which argument parser to use?
 
 I've used [Commander.js](https://www.npmjs.com/package/commander) in the past to create Node CLI applications, and so I started with this.
-However, it doesn't have an easy prompt interface from what I could tell.
+Unfortunately, it doesn't have an easy prompt interface from what I could tell.
 I wanted to have an experience similar to [release-it](https://www.npmjs.com/package/release-it) and AWS' SAM CLI.
 Because of this, I pivoted my CLI over to using [inquirer](https://www.npmjs.com/package/inquirer) because of its easy to use prompts and the fact that release-it uses it.
 
@@ -65,9 +65,9 @@ As for the configuration file, I went with using a JSON file that stores the pro
 
 I knew beforehand that browsers can generate PDFs from HTML content, so I figured Chrome might expose that functionality on the command line.
 Turns out that this is the case, that [one can generate PDFs using headless Chrome.](https://developers.google.com/web/updates/2017/04/headless-chrome#create_a_pdf)
-However, to use headless Chrome, my users would already have to have Chrome installed on their machines.
+To use headless Chrome my users would already have to have Chrome installed on their machines.
 While this is a relatively safe bet, I want my dependencies contained in my module.
-So instead of headless Chrome, I picked [puppeteer](https://www.npmjs.com/package/puppeteer) instead.
+Instead of headless Chrome, I picked [puppeteer](https://www.npmjs.com/package/puppeteer) instead.
 Since using these browsers/tools to generate PDFs is a common use case, the puppeteer package has some example code on how to achieve my use case:
 
 ```js
@@ -210,7 +210,7 @@ We go ahead and run this snippet and...
 > ![Final generated resume](../../../../img/htmlToPdfCI/final-generated-resume.png)
 
 🎉 sweet!
-We now have the main logic figured out, we just need to extract magic strings and variables so that passed parameters create the variables we need!
+We now have the main logic figured out, we now need to extract magic strings and variables so that passed parameters create the variables we need!
 
 ### Inquirer
 
