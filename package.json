@@ -26,6 +26,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@our-weekend-project/html-to-pdf-ci": "^0.1.2",
     "clean-css": "^4.2.3",
+    "eleventy-plugin-images-responsiver": "^1.5.3",
     "express": "^4.17.1",
     "markdown-it": "^11.0.0",
     "markdown-it-attrs": "^3.0.2",

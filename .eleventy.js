@@ -1,6 +1,7 @@
 const cleanCSS = require('clean-css');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const imagesResponsiver = require('eleventy-plugin-images-responsiver');
 
 const extractExcerpt = (article) => {
     if (!article.hasOwnProperty('templateContent')) {
@@ -122,8 +123,24 @@ module.exports = (eleventyConfig) => {
         open: 'local'
     });
 
+    // * Plugin section
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(syntaxHighlight);
+    const presets = {
+        default: {
+            sizes: '(max-width: 45em) 90vw, 40em',
+            attributes: {
+                loading: 'lazy'
+            }
+        },
+        "profile-img": {
+            sizes: '(max-width: 45em) 30vw, 250px',
+            attributes: {
+                loading: 'lazy'
+            }
+        }
+    };
+    eleventyConfig.addPlugin(imagesResponsiver, presets);
 
     eleventyConfig.addPassthroughCopy("img/**/*.*");
     eleventyConfig.addPassthroughCopy("resume");
