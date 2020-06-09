@@ -1,6 +1,6 @@
 ---
 layout: post-layout.njk
-title: Tim Giles uses
+title: Uses - Tim Giles
 date: 2020-06-05
 tags: ['post', 'uses', 'tech', 'software', 'hardware']
 topics: ['uses', 'tech', 'software', 'hardware']
@@ -15,9 +15,9 @@ It's nice to see others' choices as well as document my own changes over time.
 
 ### Software
 
-* Operating System: Windows, sometimes Ubuntu
+* Operating System: Windows
 * Editor: [Visual Studio Code](https://code.visualstudio.com/) since early 2018
-  * Font: [Hack](https://sourcefoundry.org/hack/) but I used a patched version with ligatures
+  * Font: [Hack](https://sourcefoundry.org/hack/) but I use a patched version with ligatures
   * Themes
     * [Laserwave](https://github.com/Jaredk3nt/laserwave)
     * [Noctis/Noctis Sereno/Noctis Obscuro](https://github.com/liviuschera/noctis)
@@ -38,13 +38,13 @@ It's nice to see others' choices as well as document my own changes over time.
 * Storage:
   * Primary: 500 GB ADATA SP550 SSD
   * Secondary/Games: 1 TB Western Digital Blue HDD @ 7200 RPM
-  * Tertiary/External: 1 TB Western Digital My Passport
-  * Backups: 4 TB Seagate BarraCuda @ 5400 RPM
+  * Tertiary/External: 1 TB Western Digital My Passport HDD
+  * Backups: 4 TB Seagate BarraCuda HDD @ 5400 RPM
 * Keyboard: G.SKILL RIPJAWS KM570 RGB Mechanical with Cherry MX Brown switches
 * Mouse: Logitech MX Master 3
 * Headphones:
   * Wired: Audio-Technica ATH-M50
-  * Wireless: Sony WH-1000XM3 (which I extremely recommend!)
+  * Wireless: Sony WH-1000XM3 (which I highly recommend!)
 * Microphone: Blue Yeti
 * Case: [Fractal Design R5 Window](https://www.fractal-design.com/products/cases/define/define-r5-window/black/)
 
@@ -58,4 +58,4 @@ It's nice to see others' choices as well as document my own changes over time.
 * Water, water, water
 * Coffee ☕: Cold brew, iced moka pot, and iced coffee
 * Cocktails 🍸: Gin and Tonic (1 to 1), Gimlet, Long Island Iced Tea
-* Whiskey 🥃: Ardbeg 12, Lagavulin 16, McClelland's Islay
+* Whiskey 🥃: Ardbeg 12yr, Lagavulin 16yr, McClelland's Islay
