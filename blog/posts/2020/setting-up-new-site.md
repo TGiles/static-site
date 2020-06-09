@@ -6,7 +6,7 @@ tags: ['post', '11ty', 'Web Development']
 topics: ['11ty', 'Web Development']
 ---
 
-# {{ title }}
+# Setting up a blog in Eleventy/11ty
 
 Eleventy seems straightforward.
 I'm hitting hiccups but with my own thoughts, nothing to do with eleventy.
