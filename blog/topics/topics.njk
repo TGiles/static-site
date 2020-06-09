@@ -1,10 +1,11 @@
 ---
 layout: base-layout.njk
-description: Categories page description
 pagination:
   data: collections
   size: 1
   alias: tags
+eleventyComputed:
+  title: Tagged "{{ tags }}" - Tim Giles Jr
 permalink: blog/tags/{{ tags | slug }}/
 ---
 <h1>#{{ tags }}</h1>
