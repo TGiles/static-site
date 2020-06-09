@@ -1,10 +1,10 @@
 ---
 layout: home-layout.njk
-title: Tim Giles Jr - Full Stack Developer
+title: Tim Giles - Full Stack Developer
 tags: ['navigation']
 ---
 
-# Tim Giles Jr
+# Tim Giles
 
 Software Engineer | Roboticist | AI | Musician | Photographer {class=leader-paragraph}
 
