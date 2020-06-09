@@ -27,7 +27,7 @@ It's nice to see others' choices as well as document my own changes over time.
 * Browser: Chrome
 * Music: Spotify
 * Recording: [Open broadcaster software](https://obsproject.com/)
-* Streaming: [Streamlabs](https://streamlabs.com/) which is just OBS but more user friendly.
+* Streaming: [Streamlabs](https://streamlabs.com/) which is OBS but more user friendly.
 
 ### Desktop Hardware
 * CPU: Intel Core i5 @ 3.30 GHz (hopefully I'll have a new build soon!)
