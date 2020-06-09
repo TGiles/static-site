@@ -36,7 +36,7 @@ const readingTime = article => {
     const readingSpeed = 275;
 
     if (!htmlContent) {
-        return `0 minutes`;
+        return `0 min`;
     }
 
     const content = htmlContent.replace(/(<([^>]+)>)/gi, '');
@@ -52,9 +52,9 @@ const readingTime = article => {
     const min = minText + minImages;
     estimatedTime = min;
     if (estimatedTime === 1) {
-        return `About ${estimatedTime} minute read`;
+        return `${estimatedTime} min read`;
     } else {
-        return `About ${estimatedTime} minutes read`;
+        return `${estimatedTime} min read`;
     }
 };
 
