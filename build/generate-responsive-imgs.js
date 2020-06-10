@@ -13,7 +13,7 @@ const main = () => {
 
         const widths = new Array(5).fill(0);
         for (let i = 0; i < widths.length; i++) {
-            widths[i] = 320 + 150 * i;
+            widths[i] = 320 + 240 * i;
         }
         console.log(widths);
         for (let i = 0; i < files.length; i++) {
@@ -30,7 +30,7 @@ const main = () => {
                     fs.copyFileSync(gifSrc, gifDest);
                 } else {
                     const base = path.basename(files[i], extension);
-                    const outputPath = path.join(dir, `${base}-${widths[j]}w${extension}`);
+                    const outputPath = path.join(dir, `${base}-${widths[j]}${extension}`);
                     await sharp(files[i])
                         .resize(widths[j])
                         .toFile(outputPath);
