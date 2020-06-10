@@ -3,6 +3,7 @@ const path = require('path');
 const glob = require('glob');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const gifResize = require('@gumlet/gif-resize');
 
 
 const main = () => {
@@ -15,7 +16,7 @@ const main = () => {
         for (let i = 0; i < widths.length; i++) {
             widths[i] = 320 + 240 * i;
         }
-        console.log(widths);
+        console.log(`Generating images with the following widths: ${widths}`);
         for (let i = 0; i < files.length; i++) {
             let dir = path.dirname(files[i]);
             dir = dir.replace("/assets/", "/img/");
@@ -23,19 +24,21 @@ const main = () => {
 
             for (let j = 0; j < widths.length; j++) {
                 const extension = path.extname(files[i]);
+                const base = path.basename(files[i], extension);
+                const outputPath = path.join(dir, `${base}-${widths[j]}${extension}`);
                 if (extension === '.gif') {
-                    let tempDir = dir.replace("/img/", "/assets/");
-                    const gifSrc = path.join(tempDir, `${path.basename(files[i], extension)}${extension}`);
-                    const gifDest = path.join(dir, `${path.basename(files[i], extension)}${extension}`);
-                    fs.copyFileSync(gifSrc, gifDest);
+                    const buffer = fs.readFileSync(files[i]);
+                    let transformedGif = await gifResize({
+                        width: widths[j]
+                    })(buffer);
+                    fs.writeFileSync(outputPath, transformedGif);          
                 } else {
-                    const base = path.basename(files[i], extension);
-                    const outputPath = path.join(dir, `${base}-${widths[j]}${extension}`);
                     await sharp(files[i])
                         .resize(widths[j])
                         .toFile(outputPath);
 
                 }
+
             }
         }
     });
