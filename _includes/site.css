@@ -330,7 +330,8 @@ article {
         grid-row: span 3 / span 3;
     }
     div.profile > img.profile-img {
-        width: 30%;
+        width: 200px;
+        height: 200px;
     }
     img  {
         width: 100%;
