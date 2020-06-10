@@ -254,8 +254,9 @@ a > strong + p {
     padding: 1rem;
 }
 
-img[src="/img/profile.jpg"] {    
+img.profile-img {    
     width: 250px;
+    height: 250px;
     border-radius: 50%;
 }
 
@@ -326,9 +327,9 @@ article {
     }
     div.profile {
         grid-column: 2 / 2;
-        grid-row: 3 / span 3;
+        grid-row: span 3 / span 3;
     }
-    div.profile > img[src="/img/profile.jpg"] {
+    div.profile > img.profile-img {
         width: 30%;
     }
     img  {
