@@ -128,13 +128,20 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(syntaxHighlight);
     const presets = {
         default: {
-            sizes: '(max-width: 45em) 90vw, 40em',
+            sizes: '(max-width: 45em) 45vw, 900px',
+            minWidth: 250,
+            maxWidth: 1200,
+            fallbackWidth: 725,
             attributes: {
                 loading: 'lazy'
             }
         },
         "profile-img": {
-            sizes: '(max-width: 45em) 30vw, 250px',
+            fallbackWidth: 250,
+            minWidth: 250,
+            maxWidth: 250,
+            steps: 1,
+            sizes: '250px',
             attributes: {
                 loading: 'lazy'
             }
