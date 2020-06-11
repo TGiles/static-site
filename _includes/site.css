@@ -278,6 +278,14 @@ img {
     border: 2px solid var(--old-lavender);
 }
 
+blockquote.edit-post-quote {
+    margin-left: 0;
+    padding-left: 1rem;
+    border-left: 4px solid;
+    border-left-color: var(--maximum-blue);
+    box-sizing: border-box;
+}
+
 div.profile {
     grid-column: 2 / 2;
     grid-row: 1 / 1;
