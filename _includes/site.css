@@ -275,6 +275,7 @@ img {
     margin: auto;
     margin-bottom: 1rem;
     width: auto;
+    border: 2px solid var(--old-lavender);
 }
 
 div.profile {
