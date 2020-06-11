@@ -221,6 +221,8 @@ nav a i {
 nav.post-navigation {
     flex-flow: row wrap;
     justify-content: space-evenly;
+    border: 2px solid var(--old-lavender);
+    border-radius: 1rem
 }
 
 nav.post-navigation > span {
