@@ -228,6 +228,7 @@ nav.post-navigation {
 nav.post-navigation > span {
     align-self: center;
     padding: 1rem;
+    font-size: var(--font-150);
 }
 
 nav.post-navigation > div.page-count {
