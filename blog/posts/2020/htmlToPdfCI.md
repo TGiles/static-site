@@ -1,6 +1,7 @@
 ---
 layout: post-layout.njk
 title: HTML To PDF CI
+description: Creating a new package on NPM called HTML-To-PDF-CI which converts HTML documents to PDFs as part of a continuous integration workflow
 date: 2020-05-25
 tags: ['post', 'CLI', 'CI', 'Puppeteer', 'NPM']
 topics: ['CLI', 'CI', 'Puppeteer', 'NPM']

@@ -1,6 +1,7 @@
 ---
 layout: post-layout.njk
 title: Setting Up A Blog in 11ty
+description: Tim Giles creates his new website featuring a blog using eleventy
 date: 2020-05-19
 tags: ['post', '11ty', 'Web Development']
 topics: ['11ty', 'Web Development']
