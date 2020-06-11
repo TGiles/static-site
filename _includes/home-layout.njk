@@ -4,7 +4,12 @@
     <body>
         {% include "sidebar-navigation.njk" %}
         <div class="profile">
-            <img class="profile-img" src="/img/profile/profile.jpg" alt="Tim Giles">
+            <img 
+            class="profile-img"
+            srcset="/img/profile/profile-250.webp"
+            sizes="250px"
+            src="/img/profile/profile.webp" 
+            alt="Tim Giles">
         </div>
         <main id="main">
             {{ content | safe }}
