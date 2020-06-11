@@ -1,9 +1,10 @@
 ---
 layout: post-layout.njk
-title: Uses - Tim Giles
+title: Tim Giles Uses
 date: 2020-06-05
 tags: ['post', 'uses', 'tech', 'software', 'hardware']
 topics: ['uses', 'tech', 'software', 'hardware']
+permalink: uses/
 ---
 
 # What is a `/uses` page?
