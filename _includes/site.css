@@ -326,9 +326,13 @@ article {
     html {
         font-size: var(--base-font);
     }
+    body {
+        grid-template-columns: .05fr 1fr .05fr;
+        grid-gap: 0.5rem;
+    }
     nav.sidebar-navigation {
         position: relative;
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 4;
         height: auto;
         margin-right: unset;
     }
