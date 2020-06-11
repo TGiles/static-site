@@ -1,6 +1,6 @@
 ---
 layout: post-layout.njk
-title: Adding features to auto-lighthouse - Tim Giles
+title: Adding features to auto-lighthouse
 date: 2020-05-29
 tags: ['post', 'CLI', 'accessibility', 'Lighthouse', 'automation']
 topics: ['CLI', 'accessibility', 'Lighthouse', 'automation']

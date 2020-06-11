@@ -1,6 +1,6 @@
 ---
 layout: post-layout.njk
-title: Setting Up A Blog in 11ty - Tim Giles
+title: Setting Up A Blog in 11ty
 date: 2020-05-19
 tags: ['post', '11ty', 'Web Development']
 topics: ['11ty', 'Web Development']
