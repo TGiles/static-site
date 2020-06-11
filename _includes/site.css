@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 :root {
     --base-font: 1rem;
     --font-125: calc(var(--base-font) * 1.25);
@@ -18,6 +19,13 @@
 
 }
 
+@font-face {
+    font-family: 'Hack';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: monospace, url("https://cdn.jsdelivr.net/npm/hack-font@3.3.0/web/fonts/hack-regular-subset.woff2");
+}
 html {
     scroll-behavior: smooth;
     background-color: #181a1b;
