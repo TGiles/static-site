@@ -1,6 +1,6 @@
 ---
 layout: post-layout.njk
-title: Tim Giles Uses
+title: Uses
 date: 2020-06-05
 tags: ['post', 'uses', 'tech', 'software', 'hardware']
 topics: ['uses', 'tech', 'software', 'hardware']
