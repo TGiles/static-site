@@ -193,7 +193,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addCollection('post', collection => {
         const posts = collection.getFilteredByTag('post');
 
-        for( let i = 0; i < posts.length; i++) {
+        for (let i = 0; i < posts.length; i++) {
             const prevPost = posts[i - 1];
             const nextPost = posts[i + 1];
 
