@@ -61,6 +61,12 @@ a {
     box-shadow: inset 0 -0.07em 0 var(--hot-pink);
 }
 
+*:focus {
+    outline-style: solid;
+    outline-color: var(--powder-blue);
+    outline-width: 2px;
+    outline-offset: 1.25px;
+}
 
 a:hover, a:focus {
     box-shadow: var(--translucent-hot-pink) 0px -1.05em 0px inset;
