@@ -1,7 +1,10 @@
 const cleanCSS = require('clean-css');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const imagesResponsiver = require('eleventy-plugin-images-responsiver');
+const { unescapeAll } = require('markdown-it/lib/common/utils');
+const Prism = require('prismjs');
+const PrismLoader = require('prismjs/components/index');
+PrismLoader(['bash', 'js']);
 
 const extractExcerpt = (article) => {
     if (!article.hasOwnProperty('templateContent')) {
@@ -68,6 +71,40 @@ module.exports = (eleventyConfig) => {
         linkify: true
     };
     let markdownLib = markdownIt(options).use(markdownItAttrs);
+    markdownLib.renderer.rules.fence = function (tokens, idx, options, env, slf) {
+        const token = tokens[idx];
+        let info = token.info ? unescapeAll(token.info).trim() : '';
+        let langName = '';
+        let i;
+        let tmpAttrs;
+        let highlighted
+        if (info) {
+            langName = info.split(/\s+/g)[0];
+            highlighted = Prism.highlight(token.content, Prism.languages[langName], langName);
+            let lines = highlighted.split('\n').slice(0, -1);
+            highlighted = lines.join("<br>");
+        }
+        if (info) {
+            i = token.attrIndex('class');
+            tmpAttrs = token.attrs ? token.attrs.slice() : [];
+
+            if (i < 0) {
+                tmpAttrs.push(['class', options.langPrefix + langName]);
+            } else {
+                tmpAttrs[i][1] += ' ' + options.langPrefix + langName;
+            }
+
+            // Fake token just to render attributes
+            tmpToken = {
+                attrs: tmpAttrs
+            };
+
+            return '<pre' + slf.renderAttrs(tmpToken) + 'tabindex="0"><code' + slf.renderAttrs(tmpToken) + '>'
+                + highlighted
+                + '</code></pre>\n';
+
+        }
+    };
     eleventyConfig.setLibrary('md', markdownLib);
     eleventyConfig.addFilter('dateIso', date => {
         let _date = new Date(date);
@@ -125,7 +162,8 @@ module.exports = (eleventyConfig) => {
 
     // * Plugin section
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
-    eleventyConfig.addPlugin(syntaxHighlight);
+    // TODO: Fix sizes from 45em to something more appropriate
+    // 
     const presets = {
         default: {
             sizes: '(max-width: 45em) 45vw, 900px',
