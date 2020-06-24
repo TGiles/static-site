@@ -70,7 +70,6 @@ a {
 
 a:hover, a:focus {
     box-shadow: var(--translucent-hot-pink) 0px -1.05em 0px inset;
-
 }
 
 a.nav-link-next {
