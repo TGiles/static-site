@@ -59,4 +59,4 @@ It's nice to see others' choices as well as document my own changes over time.
 * Water, water, water
 * Coffee ☕: Cold brew, iced moka pot, and iced coffee
 * Cocktails 🍸: Gin and Tonic (1 to 1), Gimlet, Long Island Iced Tea
-* Whiskey 🥃: Ardbeg 12yr, Lagavulin 16yr, McClelland's Islay
+* Whiskey 🥃: Ardbeg 12yr, Lagavulin 16yr, Laphroaig 10yr, McClelland's Islay
