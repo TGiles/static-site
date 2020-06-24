@@ -81,8 +81,6 @@ module.exports = (eleventyConfig) => {
         if (info) {
             langName = info.split(/\s+/g)[0];
             highlighted = Prism.highlight(token.content, Prism.languages[langName], langName);
-            let lines = highlighted.split('\n').slice(0, -1);
-            highlighted = lines.join("<br>");
         }
         if (info) {
             i = token.attrIndex('class');
