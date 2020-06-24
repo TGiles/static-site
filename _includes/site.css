@@ -69,7 +69,7 @@ a {
 }
 
 a:hover, a:focus {
-    box-shadow: var(--translucent-hot-pink) 0px -1.05em 0px inset;
+    box-shadow: var(--translucent-hot-pink) 0px -1.05em 0px inset; 
 }
 
 a.nav-link-next {
@@ -198,12 +198,12 @@ nav > div {
     flex-flow: column nowrap;
 }
 
-nav a:focus, nav a:hover {
+nav a:focus, nav a:hover, div.post-navigation a:hover {
     filter: brightness(150%);
     box-shadow: var(--translucent-roman-silver) 0px -8.00em 0px inset;
 }
 
-nav a {
+nav a, div.post-navigation a {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -223,20 +223,23 @@ nav a i {
     font-size: var(--font-150);
 }
 
-nav.post-navigation {
+div.post-navigation {
+    display: flex;
+    font-family: Hack;
+    background: var(--raisin-black);
     flex-flow: row wrap;
     justify-content: space-evenly;
     border: 2px solid var(--old-lavender);
     border-radius: 1rem
 }
 
-nav.post-navigation > span {
+div.post-navigation > span {
     align-self: center;
     padding: 1rem;
     font-size: var(--font-150);
 }
 
-nav.post-navigation > div.page-count {
+div.post-navigation > div.page-count {
     padding: 1rem;
 }
 

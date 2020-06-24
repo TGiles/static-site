@@ -1,4 +1,4 @@
-<nav class="post-navigation">
+<div class="post-navigation">
     {% if pagination.href.previous %}
       <a class="nav-link-prev" href="{{pagination.href.previous}}">Previous Page</a>
     {% endif %}
@@ -14,4 +14,4 @@
     {% if not pagination.href.next %}
       <span class="strike-through">Next Page</span>
     {% endif %}
-</nav>
+</div>
