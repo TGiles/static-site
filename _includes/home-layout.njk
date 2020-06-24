@@ -3,15 +3,15 @@
     {% include "home-header.njk" %}
     <body>
         {% include "sidebar-navigation.njk" %}
-        <div class="profile">
+        <main id="main">
+                    <div class="profile">
             <img 
             class="profile-img"
             srcset="/img/profile/profile-250.webp"
             sizes="250px"
-            src="/img/profile/profile.webp" 
-            alt="Tim Giles">
+            src="/img/profile/profile.webp"
+            alt="Tim Giles smiling and looking off in the distance with a yellow tulip in the foreground">
         </div>
-        <main id="main">
             {{ content | safe }}
         </main>
         {% include "footer.njk" %}
