@@ -166,7 +166,7 @@ module.exports = (eleventyConfig) => {
     // 
     const presets = {
         default: {
-            sizes: '(max-width: 45em) 45vw, 900px',
+            sizes: `(max-width: 340px) 250px, 50vw`,
             minWidth: 250,
             maxWidth: 1200,
             fallbackWidth: 725,
