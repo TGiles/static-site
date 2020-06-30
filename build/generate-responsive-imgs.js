@@ -5,7 +5,7 @@ const fs = require('fs');
 const mkdirp = require('mkdirp');
 const gifResize = require('@gumlet/gif-resize');
 
-const webp = require('webp-converter');
+// const webp = require('webp-converter');
 
 const main = () => {
     glob("../assets/**/*.+(png|jpg|jpeg|gif)", async function (err, files) {
