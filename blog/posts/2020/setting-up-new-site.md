@@ -12,7 +12,7 @@ topics: ['11ty', 'Web Development']
 Eleventy seems straightforward.
 It's an unopinionated static site generator that allows you to add plugins, functions, filters, and shortcodes when you need them.
 I decided to use [Nunjucks](https://mozilla.github.io/nunjucks/) as most of the examples involving Eleventy used Nunjucks.
-Having to learn Nunjucks did give me some issues, but given enough time and research I've resolved most of them.
+Having to learn Nunjucks did give me some issues, but given enough time and research I've resolved them.
 
 ## Nunjucks
 
