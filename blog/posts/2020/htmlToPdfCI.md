@@ -14,7 +14,7 @@ topics: ['CLI', 'CI', 'Puppeteer', 'NPM']
 ![HTML to PDF CI tool in action](/img/htmlToPdfCI/app.gif)
 In the process of creating my new static site, I noticed I was regenerating my resume PDF whenever I updated the source HTML.
 Since the PDF is derivative of the HTML, I didn't want to maintain two sources of truth.
-My friend, [Dylan](https://dylansheffer.com), suggested that I create a CI module to generate this PDF on build.
+My friend, [Dylan](https://dylansheffer.com), suggested that I create a continuous integration (CI) module to generate this PDF on build.
 We both have web based resumes and figured this was something that could be useful to others as well.
 It seemed like a straightforward task, so I started planning and designing what this tool would do.
 
@@ -25,7 +25,7 @@ Our weekend project is an organization that some friends and I created for proje
 
 ### Which argument parser to use?
 
-I've used [Commander.js](https://www.npmjs.com/package/commander) in the past to create Node CLI applications, and so I started with this.
+I've used [Commander.js](https://www.npmjs.com/package/commander) in the past to create Node command line interface (CLI) applications, and so I started with this.
 Unfortunately, it doesn't have an easy prompt interface from what I could tell.
 I wanted to have an experience similar to [release-it](https://www.npmjs.com/package/release-it) and AWS' SAM CLI.
 Because of this, I pivoted my CLI over to using [inquirer](https://www.npmjs.com/package/inquirer) because of its easy to use prompts and the fact that release-it uses it.
