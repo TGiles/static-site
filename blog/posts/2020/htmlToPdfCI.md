@@ -67,7 +67,7 @@ As for the configuration file, I went with using a JSON file that stores the pro
 I knew beforehand that browsers can generate PDFs from HTML content, so I figured Chrome might expose that functionality on the command line.
 Turns out that this is the case, that [one can generate PDFs using headless Chrome.](https://developers.google.com/web/updates/2017/04/headless-chrome#create_a_pdf)
 To use headless Chrome my users would already have to have Chrome installed on their machines.
-While this is a relatively safe bet, I want my dependencies contained in my module.
+While this is a relatively safe bet (a quick google search shows that Chrome has 60%+ of the market share), I want my dependencies contained in my module.
 Instead of headless Chrome, I picked [puppeteer](https://www.npmjs.com/package/puppeteer) instead.
 Since using these browsers/tools to generate PDFs is a common use case, the puppeteer package has some example code on how to achieve my use case:
 
