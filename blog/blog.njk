@@ -1,0 +1,37 @@
+--- 
+layout: base-layout.njk
+description: Tim Giles blog home page
+title: Blog
+pagination:
+  data: collections.post
+  size: 5 
+  alias: posts 
+---
+
+{% include "post-navigation.njk" %}
+
+{% for post in posts %}
+  <article>
+    <h1>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </h1>
+    <p>
+      {{ post | readingTime }}
+      |
+      <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable}}</time>
+      {% if post.data.tags.length > 1%}
+      | Topics:
+      {% endif %}
+      {% for topic in post.data.tags %}
+        {% if topic !== 'post'%}
+        <a href="/blog/tags/{{topic}}">{{topic}}</a>
+        {% endif %}
+      {% endfor %}
+    </p>
+    <p>
+      {% excerpt post %}
+    </p>
+  </article>
+{% endfor %}
+
+{% include "post-navigation.njk" %}

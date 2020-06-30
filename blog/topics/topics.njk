@@ -1,0 +1,30 @@
+---
+layout: base-layout.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tags
+eleventyComputed:
+  title: Tagged "{{ tags }}"
+permalink: blog/tags/{{ tags | slug }}/
+---
+<h1>#{{ tags }}</h1>
+{% if collections[tags].length === 1 %}
+  <small>{{collections[tags].length}} post published</small>
+{% else %}
+  <small>{{collections[tags].length}} posts published</small>
+{% endif %}
+<section>
+  <ol reversed>
+    {% for post in collections[tags] | reverse %}
+      {% if not loop.first %}
+        <hr/>
+      {% endif %}
+      <a href="{{post.url}}">
+        {{ post.data.title }}
+      </a>
+    {% endfor %}
+  </ol>
+</section>
+
+<a href="/blog">Back to All Posts</a>

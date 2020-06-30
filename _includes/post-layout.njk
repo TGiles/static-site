@@ -1,0 +1,42 @@
+--- 
+layout: base-layout.njk
+---
+<p>
+    {{ content | readingTime }}
+    {% if topics.length > 1 %}
+    | Topics:
+    {% endif %}
+    {% for topic in topics %}
+        <a href="/blog/tags/{{topic}}">{{topic}}</a>
+    {% endfor %}
+    | <a href="https://github.com/TGiles/static-site/blob/master/{{page.inputPath}}">Edit post <i class="fab fa-github"></i></a>
+</p>
+<article>
+    {{ content | safe }}
+</article>
+<blockquote class="edit-post-quote">
+    <p>
+        Is there an issue with this post? 
+        Think you could clarify, update or add something?
+        All my posts are available to edit on Github.
+        Any fix, little or large, is appreciated!
+        <a href="https://github.com/TGiles/static-site/blob/master/{{page.inputPath}}">Edit on Github <i class="fab fa-github"></i></a>
+    </p>
+
+</blockquote>
+{% if prevPost or nextPost %}
+    <nav title="related posts" class="related-posts">
+    {% if prevPost %}
+        <a class="previous-post" href="{{prevPost.url}}">
+            <strong>Previous: </strong>
+            <p>{{prevPost.data.title}}</p>
+        </a>
+    {% endif %}
+    {% if nextPost %}
+        <a class="next-post" href="{{nextPost.url}}">
+        <strong>Next: </strong>
+        <p>{{nextPost.data.title}}</p>
+        </a>
+    {% endif %}
+    </nav>
+{% endif %}

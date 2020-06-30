@@ -1,0 +1,41 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build/generate-responsive-imgs && eleventy && html-to-pdf-ci --ci && eleventy",
+    "serve": "eleventy --serve",
+    "dev": "npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TGiles/static-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TGiles/static-site/issues"
+  },
+  "homepage": "https://github.com/TGiles/static-site#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@gumlet/gif-resize": "^1.1.1",
+    "@our-weekend-project/html-to-pdf-ci": "^0.1.2",
+    "clean-css": "^4.2.3",
+    "eleventy-plugin-images-responsiver": "^1.5.3",
+    "express": "^4.17.1",
+    "glob": "^7.1.6",
+    "markdown-it": "^11.0.0",
+    "markdown-it-attrs": "^3.0.2",
+    "markdown-it-github-headings": "^2.0.0",
+    "mkdirp": "^1.0.4",
+    "prismjs": "^1.20.0",
+    "puppeteer": "^3.1.0",
+    "sharp": "^0.25.3"
+  }
+}
