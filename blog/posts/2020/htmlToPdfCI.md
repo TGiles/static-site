@@ -230,5 +230,43 @@ So I create the options object by asking the following prompts:
 Inquirer has different prompt formats you can use such as: `input`, `password`, `list`, `checkbox`, `confirm`, and others.
 For my file name prompts, I used the simple text `input` prompt.
 Since entering file paths can be tedious, I wanted prompt format that could speed up this process.
-Luckily, inquirer has some featured plugins and one of these plugins is a [fuzzy path search!](https://github.com/adelsz/inquirer-fuzzy-path)
+Inquirer has some featured plugins and one of these plugins is a [fuzzy path search!](https://github.com/adelsz/inquirer-fuzzy-path)
+By using this fuzzy path search, a user can more easily enter or find the exact path they want.
+Finally, I use the `confirm` format for the "Save responses..." which is a yes/no prompt.
+
+After some feedback from our-weekend-project however, I expanded the number of questions in the prompt to create a more custom experience.
+In addition to the previous prompts, the 0.1.x release of this tool has these additional questions:
+* Print background graphics?
+* Print in landscape orientation?
+* Use custom margins for the generated PDF?
+  * If true:
+  * Enter top margin in px, in, mm, or cm
+  * Enter left margin in px, in, mm, or cm
+  * Enter right margin in px, in, mm, or cm
+  * Enter bottom margin in px, in, mm, or cm
+* Select a paper format
+  * Options include:
+  * Letter
+  * Legal
+  * Tabloid
+  * Ledger
+  * A0
+  * A1
+  * A2
+  * A3
+  * A4
+  * A5
+  * A6
+I also removed the following questions:
+* Enter the name of the source HTML document
+* Enter the path to the generated site folder
+
+By adding and removing the previous questions, the tool can be more generic and used in other environments that I did not originally account for.
+
+## Summary
+
+I originally created the tool to work with static site generators and specifically Eleventy.
+Again, after receiving feedback, I've made changes that allow more people to use this tool in a workflow that makes sense to them.
+Now, after this work, there is another prompt-based CLI/CI PDF creation tool available for use on NPM.
+Feel free to use this tool in your workflow and open any relevant issues in [the GitHub repository](https://github.com/our-weekend-project/html-to-pdf-ci)!
 
