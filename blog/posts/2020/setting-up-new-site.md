@@ -99,6 +99,7 @@ Since my website is nothing but static content that is controlled by me, I'm not
 
 ## Summary
 
+Huge thanks to [Jon Keeping](https://github.com/JonUK) and his blog post on [creating a blog with Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) which helped immensely in getting started!
 By putting all of the previous together, I was able to create my new personal site using Eleventy, markdown, plugins, and some custom code.
 Although I needed to write a good bit of custom code, using Eleventy for generating my static site has been an enjoyable, but challenging, experience.
 Now I have a site that scores well on Lighthouse audits and is accessible to many users!
