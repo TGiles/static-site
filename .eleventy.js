@@ -64,13 +64,19 @@ const readingTime = article => {
 
 module.exports = (eleventyConfig) => {
     const markdownIt = require('markdown-it');
+    const markdownGithubHeadings = require('markdown-it-github-headings');
     const markdownItAttrs = require('markdown-it-attrs');
     let options = {
         html: true,
         breaks: false,
         linkify: true
     };
-    let markdownLib = markdownIt(options).use(markdownItAttrs);
+    let githubHeadingOptions = {
+        prefixHeadingIds: false
+    }
+    let markdownLib = markdownIt(options)
+        .use(markdownItAttrs)
+        .use(markdownGithubHeadings, githubHeadingOptions);
     markdownLib.renderer.rules.fence = function (tokens, idx, options, env, slf) {
         const token = tokens[idx];
         let info = token.info ? unescapeAll(token.info).trim() : '';
