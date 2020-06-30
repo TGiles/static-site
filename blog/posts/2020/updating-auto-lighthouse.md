@@ -25,7 +25,7 @@ At one of my previous jobs, I needed to generate accessibility audits on many di
 Unfortunately the software I was using, Sortsite, was not generating accurate audits of our web pages.
 This was the initial spark of auto-lighthouse, just trying to make my day-to-day easier 😂
 
-The main technologies used in auto-lighthouse are [simplecrawler](https://www.npmjs.com/package/simplecrawler), [Google Lighthouse](https://github.com/GoogleChrome/lighthouse) and [commander](https://github.com/tj/commander.js/).
+The main technologies used in auto-lighthouse are [simplecrawler](https://www.npmjs.com/package/simplecrawler), [Google Lighthouse](https://github.com/GoogleChrome/lighthouse) and [Commander.js](https://github.com/tj/commander.js/).
 simplecrawler is a web crawler that is event driven.
 For example, whenever the crawler adds a page to the queue, it fires off an event that can be caught and acted upon.
 I use this add event to filter media types that are not relevant to my search.
