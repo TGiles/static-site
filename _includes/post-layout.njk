@@ -25,7 +25,7 @@ layout: base-layout.njk
 
 </blockquote>
 {% if prevPost or nextPost %}
-    <nav class="related-posts">
+    <nav title="related posts" class="related-posts">
     {% if prevPost %}
         <a class="previous-post" href="{{prevPost.url}}">
             <strong>Previous: </strong>
