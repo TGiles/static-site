@@ -16,11 +16,11 @@ I make other developers more effective by supporting DevOps in an organization.
 I solve business problems using proper software engineering principles.
 I also implement these principles in organizations.
 Personally, I am a believer in the Agile methodology.
-It's is something I like to bring to organizations.
+It is something I like to bring to organizations.
 Additionally, I contribute to open source when possible.
 
 For whatever reason, I decided to write a thesis in a field that I had no experience in.
-My thesis has to be the most challenging thing I have done to date.
+My thesis was the most challenging thing I have done to date.
 Because of this thesis, I understand robotics better.
 I also understand the tools and frameworks, such as [ROS](https://www.ros.org/) that roboticists use to create applications.
 
@@ -54,7 +54,7 @@ It allows me to crawl a web domain, generate reports, and view the resulting [Go
 Since Lighthouse uses [axe](https://www.deque.com/axe/) under the hood, I avoid second guessing the results of the accessibility audit.
 As a bonus, I get all the other metrics from the Lighthouse report as well!
 
-### [Master's thesis](https://github.com/TGiles/TGiles.github.io/blob/master/Tim-Giles-Thesis.pdf)
+### [Master's Thesis](https://github.com/TGiles/TGiles.github.io/blob/master/Tim-Giles-Thesis.pdf)
 
 For my thesis, I wanted to use [Team ViGIR's](https://github.com/team-vigir) open-source footstep planner to create paths for a small humanoid robot.
 Their footstep planner was originally designed for a human-sized (~6ft, ~1.8m) humanoid robot, not a small (~1.5ft, ~0.45m) humanoid robot in our lab.
