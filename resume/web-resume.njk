@@ -1,121 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134190398-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-134190398-1');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="description" content="Tim Giles resume">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
-    <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
-    <!-- capture the CSS content as a Nunjucks variable -->
-    {% set css %}
-    {% include "resume.css" %}
-    {% endset %}
-    <!-- feed it through the cssmin filter to minify-->
-    <style>
-        {{css | cssmin | safe}}
-    </style>
-    <link rel="icon" href="/img/favicon.png">
-    <script src="https://kit.fontawesome.com/04049fdd3b.js" crossorigin="anonymous"></script>
-    <title>Resume</title>
-</head>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-134190398-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-134190398-1');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="Tim Giles resume">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+        <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+        <!-- capture the CSS content as a Nunjucks variable -->
+        {% set css %}
+        {% include "resume.css" %}
+        {% endset %}
+        <!-- feed it through the cssmin filter to minify-->
+        <style>
+            {{css | cssmin | safe}}
+        </style>
+        <link rel="icon" href="/img/favicon.png">
+        <script src="https://kit.fontawesome.com/04049fdd3b.js" crossorigin="anonymous"></script>
+        <title>Resume</title>
+    </head>
 
-<body>
-    <div class="bigWrapper">
-        <header class="header">
-            <div class="heading-wrap">
-                <div class="title">
-                    Tim Giles
-                </div>
-                <div class="sub-title">
-                    Software Engineer | <a href="https://tgiles.dev/">tgiles.dev</a>
-                </div>
-            </div>
-        </header>
-        <main class="main">
-            <div class="wrapperLeft">
-                <section>
-                    <h2 class="objective-header">Objective</h2>
-                    <ul>
-                        <li>
-                            <strong>Create products</strong> that users want and enjoy using.
-                        </li>
-                        <li>
-                            Make applications more <strong>accessible</strong> by designing and implementing modern
-                            software.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>
-                            Modern <strong>front-end</strong> development: <strong>JavaScript</strong>,
-                            <strong>HTML5</strong>, TypeScript, Redux, <strong>CSS</strong>, <strong>SCSS</strong>.
-                        </li>
-                        <li>
-                            Automating tedious processes for both business and technical users.
-                        </li>
-                        <li>
-                            Solving the difficult problems that other developers stray from.
-                        </li>
-                        <li>
-                            Full-stack development: <strong>Node</strong>, C#, Java, <strong>Git</strong>.
-                        </li>
-                        <li>
-                            Object-oriented, functional, and reactive programming.
-                        </li>
-                        <li>
-                            Collaborator, presenter, servant-leader.
-                        </li>
-                    </ul>
-                </section>
-            </div>
-            <div class="wrapperRight">
-                <section>
-                    <h2>Experience</h2>
-                    <ul class="experience-list">
-                        <li>
-                            Full Stack Engineer
-                        </li>
-                        <li>
-                            <a href="https://www.chartiq.com/">ChartIQ</a>
-                        </li>
-                        <li>
-                            April 2019 - April 2020
-                        </li>
-                    </ul>
-                    <div class="experience-blurb">
-                        Integrated 3rd party components using Finsemble and 3rd party <strong>APIs and
-                            products</strong>.
-                        Spear-headed the creation of the <a href="https://github.com/ChartIQ/finsemble-eval/">trial
-                            version of Finsemble</a> by obfuscating and packaging multiple proprietary packages.
-                        Rapidly <strong>prototyped</strong> and <strong>productized</strong> numerous components for the
-                        Finsemble Ecosystem.
-                        Developed the <a href="https://blog.chartiq.com/bloomberg-and-finsemble">Finsemble and Bloomberg
-                            integration.</a>
-                        Used Node, <strong>ES9+</strong>, TypeScript, CSS, C#, <strong>Webpack</strong>, Gulp.
+    <body>
+        <div class="bigWrapper">
+            <header class="header">
+                <div class="heading-wrap">
+                    <div class="title">
+                        Tim Giles
                     </div>
-                    <ul class="experience-list">
-                        <li>
-                            Full Stack Developer
-                        </li>
-                        <li>
-                            <a href="https://www.silverchair.com/">Silverchair</a>
-                        </li>
-                        <li>
-                            July 2018 - April 2019
-                        </li>
-                    </ul>
-                    <div class="experience-blurb">
+                    <div class="sub-title">
+                        Software Engineer |
+                        <a href="https://tgiles.dev/">tgiles.dev</a>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <div class="wrapperLeft">
+                    <section>
+                        <h2 class="objective-header">Objective</h2>
+                        <ul>
+                            <li>
+                                <strong>Create products</strong>
+                                that users want and enjoy using.
+                            </li>
+                            <li>
+                                Make applications more
+                                <strong>accessible</strong>
+                                by designing and implementing
+                                <strong>modern software</strong>.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Skills</h2>
+                        <ul>
+                            <li>
+                                Modern
+                                front-end</strong>
+                                development:
+                                <strong>JavaScript</strong>,
+                                <strong>HTML5</strong>, TypeScript, Redux,
+                                <strong>CSS</strong>,
+                                <strong>SCSS</strong>.
+                            </li>
+                            <li>
+                                Automating tedious processes for both business and technical users.
+                            </li>
+                            <li>
+                                Solving the difficult problems that other developers stray from.
+                            </li>
+                            <li>
+                                Full-stack development:
+                                <strong>Node</strong>, C#, Java,
+                                <strong>Git</strong>.
+                            </li>
+                            <li>
+                                Object-oriented, functional, and reactive programming.
+                            </li>
+                            <li>
+                                Collaborator, presenter, servant-leader.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="wrapperRight">
+                    <section>
+                        <h2>Experience</h2>
+                        <ul class="experience-list">
+                            <li>
+                                Full Stack Engineer
+                            </li>
+                            <li>
+                                <a href="https://www.chartiq.com/">ChartIQ</a>
+                            </li>
+                            <li>
+                                April 2019 - April 2020
+                            </li>
+                        </ul>
+                        <div class="experience-blurb">
+                            Integrated 3rd party components using Finsemble and 3rd party
+                            <strong>APIs and products</strong>. Spear-headed the creation of the
+                            <a href="https://github.com/ChartIQ/finsemble-eval/">trial version of Finsemble</a>
+                            by obfuscating and packaging multiple proprietary packages. Rapidly
+                            <strong>prototyped</strong>
+                            and
+                            <strong>productized</strong>
+                            numerous components for the Finsemble Ecosystem. Developed the
+                            <a href="https://blog.chartiq.com/bloomberg-and-finsemble">Finsemble and Bloomberg integration.</a>
+                            Used Node,
+                            <strong>ES9+</strong>, TypeScript, CSS, C#,
+                            <strong>Webpack</strong>, Gulp.
+                        </div>
+                        <ul class="experience-list">
+                            <li>
+                                Full Stack Developer
+                            </li>
+                            <li>
+                                <a href="https://www.silverchair.com/">Silverchair</a>
+                            </li>
+                            <li>
+                                July 2018 - April 2019
+                            </li>
+                        </ul>
+                        <div class="experience-blurb">
                             Moved from Associate developer to the only
                             <strong>Full Stack</strong>
                             developer in the company within two months. Subject matter expert on
@@ -124,39 +140,39 @@
                             <strong>JavaScript</strong>,
                             <strong>HTML 5</strong>, Razor, C#,
                             <strong>SCSS</strong>, MVC, and other technologies.
-                    </div>
-                    <ul class="experience-list">
-                        <li>
-                            Software Engineer
-                        </li>
-                        <li>
-                            <a href="https://www.porttechnologyservices.com/">Port Technology Services</a>
-                        </li>
-                        <li>
-                            May 2017 - Nov. 2017
-                        </li>
-                    </ul>
-                    <div class="experience-blurb">
+                        </div>
+                        <ul class="experience-list">
+                            <li>
+                                Software Engineer
+                            </li>
+                            <li>
+                                <a href="https://www.porttechnologyservices.com/">Port Technology Services</a>
+                            </li>
+                            <li>
+                                May 2017 - Nov. 2017
+                            </li>
+                        </ul>
+                        <div class="experience-blurb">
                             Developed modern
                             <strong>front end</strong>
                             on applications used by the Port of Virginia. Established
                             <strong>Agile</strong>
                             workflow for company. Integrated 3rd party software with our products. Debugged all parts of our software.
-                    </div>
-                    <ul class="experience-list">
-                        <li>
-                            Graduate Lab Assistant
-                        </li>
-                        <li>
-                            Christopher Newport University
-                        </li>
-                        <li>
-                            Aug. 2016 - Aug. 2017
-                        </li>
-                    </ul>
-                    <div class="experience-blurb">
-                        Instructed students in intermediate Java and OOP concepts.
-                    </div>
+                        </div>
+                        <ul class="experience-list">
+                            <li>
+                                Graduate Lab Assistant
+                            </li>
+                            <li>
+                                Christopher Newport University
+                            </li>
+                            <li>
+                                Aug. 2016 - Aug. 2017
+                            </li>
+                        </ul>
+                        <div class="experience-blurb">
+                            Instructed students in intermediate Java and OOP concepts.
+                        </div>
                         <!-- <ul class="experience-list"> <li> Computer Science Tutor </li> <li> Christopher Newport University </li> <li> Sep. 2014 - Aug. 2016 </li> </ul> <div class="experience-blurb"> Tutored students on Java, <strong>JavaScript</strong>, and Python. </div> -->
                     </section>
                     <section>
@@ -170,52 +186,52 @@
                             <strong>HTML-To-PDF-CI:</strong>
                             A command line interface/continuous integration tool for converting HTML documents to PDFs. Uses <strong>Node</strong>, Puppeteer, Express, and Inquirer.
                         </div>
-                </section>
-                <section>
-                    <h2>Education</h2>
-                    <ul class="education-list">
-                        <li>M.S. Computer Science</li>
-                        <li>May 2018</li>
-                        <li>Christopher Newport University</li>
-                    </ul>
-                    <div class="education-blurb">
+                    </section>
+                    <section>
+                        <h2>Education</h2>
+                        <ul class="education-list">
+                            <li>M.S. Computer Science</li>
+                            <li>May 2018</li>
+                            <li>Christopher Newport University</li>
+                        </ul>
+                        <div class="education-blurb">
                             GPA: 3.90.
                             <strong>Thesis:</strong>
                             <span class="thesis-text">Planning Footsteps of Humanoid Robots</span>. Created configurations for small laboratory robot for Team ViGIR's
                             <strong>open source</strong>
                             footstep planner. Fixed bugs present in the planner.
-                    </div>
-                    <ul class="education-list">
-                        <li>B.S. Computer Science</li>
-                        <li>May 2016</li>
-                        <li>Christopher Newport University</li>
-                    </ul>
-                    <div class="education-blurb">
+                        </div>
+                        <ul class="education-list">
+                            <li>B.S. Computer Science</li>
+                            <li>May 2016</li>
+                            <li>Christopher Newport University</li>
+                        </ul>
+                        <div class="education-blurb">
                             GPA: 3.52.
                             <span class="honors-text">Cum Laude</span>. Created data visualization of large dataset. Used
                             <strong>JavaScript</strong>, PHP, MySQL, Bootstrap3, and D3js.
-                    </div>
-                </section>
-            </div>
-        </main>
-        <footer>
-            <ul class="contact-info">
-                <li>
-                    <i class="icon-envelope far fa-envelope"></i>
-                    <a href="mailto:tim@tgiles.dev">tim@tgiles.dev</a>
-                </li>
-                <li>
-                    <i class="fas fa-phone icon-phone"></i>
-                    <a href="tel:1-757-570-0969">757-570-0969</a>
-                </li>
-                <li>
-                    <i class="fab fa-linkedin icon-linkedin2"></i>
-                    <a href="https://www.linkedin.com/in/timothy-giles/">Timothy-Giles</a>
-                </li>
-            </ul>
-        </footer>
-    </div>
-    <script src="js/visitor-count.min.js"></script>
-</body>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer>
+                <ul class="contact-info">
+                    <li>
+                        <i class="icon-envelope far fa-envelope"></i>
+                        <a href="mailto:tim@tgiles.dev">tim@tgiles.dev</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone icon-phone"></i>
+                        <a href="tel:1-757-570-0969">757-570-0969</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-linkedin icon-linkedin2"></i>
+                        <a href="https://www.linkedin.com/in/timothy-giles/">Timothy-Giles</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+        <script src="js/visitor-count.min.js"></script>
+    </body>
 
 </html>
