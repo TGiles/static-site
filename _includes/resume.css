@@ -78,12 +78,12 @@ li {
     font-weight: 600;
 }
 
-.experience-blurb, .education-blurb, .leadership-blurb {
+.experience-blurb, .education-blurb, .personal-projects-blurb {
     line-height: 1.25rem;
     padding-bottom: 0.5rem;
 }
 
-.experience-blurb:last-of-type, .education-blurb:last-of-type, .leadership-blurb:last-of-type {
+.experience-blurb:last-of-type, .education-blurb:last-of-type, .personal-projects-blurb:last-of-type {
     padding-bottom:  0;
 }
 .thesis-text, .honors-text {
@@ -100,7 +100,7 @@ li {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 .contact-info i {
     font-size: 1.5rem;
