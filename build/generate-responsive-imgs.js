@@ -8,13 +8,15 @@ const gifResize = require('@gumlet/gif-resize');
 // const webp = require('webp-converter');
 
 const main = () => {
-    glob("../assets/**/*.+(png|jpg|jpeg|gif)", async function (err, files) {
+    glob("assets/**/*.+(png|jpg|jpeg|gif)", async function (err, files) {
         if (err) {
             throw err;
         }
         // These widths come from the images responsiver plugin in .eleventy.js
         const widths = [250, 488, 725, 963, 1200];
-        console.log(`Generating images with the following widths: ${widths}`);
+        if (files.length) {
+            console.log(`Generating images with the following widths: ${widths}`);
+        }
         for (let i = 0; i < files.length; i++) {
             let dir = path.dirname(files[i]);
             dir = dir.replace("assets", "img");
