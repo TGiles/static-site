@@ -66,7 +66,7 @@ module.exports = (eleventyConfig) => {
     const markdownIt = require('markdown-it');
     const markdownGithubHeadings = require('markdown-it-github-headings');
     const markdownItAttrs = require('markdown-it-attrs');
-    let options = {
+    let markdownItOptions = {
         html: true,
         breaks: false,
         linkify: true
@@ -74,7 +74,7 @@ module.exports = (eleventyConfig) => {
     let githubHeadingOptions = {
         prefixHeadingIds: false
     }
-    let markdownLib = markdownIt(options)
+    let markdownLib = markdownIt(markdownItOptions)
         .use(markdownItAttrs)
         .use(markdownGithubHeadings, githubHeadingOptions);
     markdownLib.renderer.rules.fence = function (tokens, idx, options, env, slf) {
