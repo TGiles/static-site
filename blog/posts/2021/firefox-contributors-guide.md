@@ -1,7 +1,7 @@
 ---
 layout: post-layout.njk
 title: So, You Want To Contribute To Firefox
-description: Thoughts about working on a password manager these last six months
+description: A guide for developers that want to contribute to Firefox
 date: 2021-04-16
 tags: ['post', 'Firefox', 'Mozilla', 'contributing', 'open source']
 topics: ['Firefox', 'contributing', 'open source', 'development', 'vscode']
