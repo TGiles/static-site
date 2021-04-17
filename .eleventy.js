@@ -121,7 +121,7 @@ module.exports = (eleventyConfig) => {
     });
 
     eleventyConfig.addFilter('copyrightYear', date => {
-        let _date = new Date(date);
+        let _date = new Date();
         return _date.getFullYear();
     });
 
