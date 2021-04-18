@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build/generate-responsive-imgs && eleventy && html-to-pdf-ci --ci && eleventy",
+    "build": "node build/generate-responsive-imgs && eleventy && html-to-pdf-ci --ci && eleventy && rm -rf ./img",
     "serve": "eleventy --serve",
-    "dev": "npm run serve"
+    "dev": "npm run serve",
+    "fullbuild": "rm -rf ./_site && npm run build"
   },
   "repository": {
     "type": "git",
