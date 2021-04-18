@@ -7,7 +7,7 @@
     "build": "node build/generate-responsive-imgs && eleventy && rm -rf ./img",
     "build-resume": "html-to-pdf-ci --ci",
     "dev": "npm run serve",
-    "fullbuild": "rm -rf ./_site && npm run build",
+    "fullbuild": "rm -rf ./_site && npm run build-resume && npm run build",
     "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
