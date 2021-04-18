@@ -31,20 +31,21 @@ It's nice to see others' choices as well as document my own changes over time.
 * Streaming: [Streamlabs](https://streamlabs.com/) which is OBS but more user friendly.
 
 ### Desktop Hardware
-* CPU: Intel Core i5 @ 3.30 GHz (hopefully I'll have a new build soon!)
-* RAM: 16GB Dual Channel @ 1200MHz
-* Motherboard: MSI Z170A Tomahawk AC
-* GPU: Color Power Red Devil 8 GB RX 580
-* Display: 2x Acer H236HL (1920x1080)
+* CPU: AMD Ryzen 9 3900x
+* RAM: 32GB Corsair Vengeance LPX @ 3200Mhz
+* Motherboard: ASUS ROG STRIX B550-F
+* GPU: XFX Radeon RX 5700 XT 8GB THICC III Ultra
+* Display: 2x Lenovo T24h-20 (2560x1440)
 * Storage:
-  * Primary: 500 GB ADATA SP550 SSD
-  * Secondary/Games: 1 TB Western Digital Blue HDD @ 7200 RPM
+  * Primary: 1 TB Samsung 970 Evo M.2
+  * Secondary/Games: 1 TB Samsung 970 Evo M.2
+  * Secondary/Developer: 500 GB ADATA SP550
   * Tertiary/External: 1 TB Western Digital My Passport HDD
   * Backups: 4 TB Seagate BarraCuda HDD @ 5400 RPM
-* Keyboard: G.SKILL RIPJAWS KM570 RGB Mechanical with Cherry MX Brown switches
-* Mouse: Logitech MX Master 3
+* Keyboard: Kinesis Freestyle Pro with Cherry MX Brown switches
+* Mouse: Logitech MX Master 3/Anker vertical mouse
 * Headphones:
-  * Wired: Audio-Technica ATH-M50
+  * Wired: Hifiman Sundara / Drop Sennheiser 6XX
   * Wireless: Sony WH-1000XM3 (which I highly recommend!)
 * Microphone: Blue Yeti
 * Case: [Fractal Design R5 Window](https://www.fractal-design.com/products/cases/define/define-r5-window/black/)
