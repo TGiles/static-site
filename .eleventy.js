@@ -4,7 +4,6 @@ const imagesResponsiver = require('eleventy-plugin-images-responsiver');
 const { unescapeAll } = require('markdown-it/lib/common/utils');
 const Prism = require('prismjs');
 const PrismLoader = require('prismjs/components/index');
-const Token = require('markdown-it/lib/token');
 PrismLoader(['bash', 'js']);
 
 const extractExcerpt = (article) => {
@@ -88,7 +87,7 @@ module.exports = (eleventyConfig) => {
     };
     let githubHeadingOptions = {
         prefixHeadingIds: false
-    }
+    };
     let markdownLib = markdownIt(markdownItOptions)
         .use(markdownItAttrs)
         .use(markdownGithubHeadings, githubHeadingOptions);
@@ -98,7 +97,7 @@ module.exports = (eleventyConfig) => {
         let langName = '';
         let i;
         let tmpAttrs;
-        let highlighted
+        let highlighted;
         if (info) {
             langName = info.split(/\s+/g)[0];
             highlighted = Prism.highlight(token.content, Prism.languages[langName], langName);
@@ -114,7 +113,7 @@ module.exports = (eleventyConfig) => {
             }
 
             // Fake token just to render attributes
-            tmpToken = {
+            let tmpToken = {
                 attrs: tmpAttrs
             };
 
