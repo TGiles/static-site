@@ -222,7 +222,8 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(imagesResponsiver, presets);
 
     eleventyConfig.addPassthroughCopy("img/**/*.*");
-    eleventyConfig.addPassthroughCopy("resume");
+    eleventyConfig.addPassthroughCopy("resume/img/background.png");
+    eleventyConfig.addPassthroughCopy("resume/Tim-Giles-Resume.pdf");
 
     eleventyConfig.addCollection('post', collection => {
         const posts = collection.getFilteredByTag('post');
