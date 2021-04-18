@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build/generate-responsive-imgs && eleventy && html-to-pdf-ci --ci && eleventy && rm -rf ./img",
-    "serve": "eleventy --serve",
+    "build": "node build/generate-responsive-imgs && eleventy && rm -rf ./img",
+    "build-resume": "html-to-pdf-ci --ci",
     "dev": "npm run serve",
-    "fullbuild": "rm -rf ./_site && npm run build"
+    "fullbuild": "rm -rf ./_site && npm run build",
+    "serve": "eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
