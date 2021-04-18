@@ -34,7 +34,8 @@ When building Firefox, you will get the output, or artifacts, of the build in a 
 On Windows, this folder is `obj-x86_64-pc-mingw32` but will be different depending on your operating system and its architecture.
 Because of this build folder, there will be duplicate files, one source file and one built file.
 This can cause issues when searching for a file when using the "Quick Open, Go to File" feature (`Ctrl + P` on Windows and Linux, `Cmd + P` on Mac) in vscode.
-![Visual Studio Code search bar showing duplicate files, one source file and one built source file](../../../../img/firefox-contributors-guide/duplicate-files-vscode.webp)
+<!-- ![Visual Studio Code search bar showing duplicate files, one source file and one built source file](../../../../img/firefox-contributors-guide/duplicate-files-vscode.webp) -->
+![Visual Studio Code search bar showing duplicate files, one source file and one built source file](assets/firefox-contributors-guide/duplicate-files-vscode.png)
 
 In the previous screenshot, the search results paths are listed as "toolkit/components/passwordmgr" then "obj-x86_64-pc-mingw32/dist/bin/modules".
 In my particular instance, the source files _happen to be the first result for each file pair_...but I've also heard that the file pairs could be switched around.
@@ -64,7 +65,7 @@ If you wish to change only the commit message of a certain commit, follow these 
 2. Run `hg commit --amend`
 3. Depending on your operating system and the terminal you are using, the following could happen
    1. On Windows, the Emacs editor should appear, but a terminal code editor _may appear instead_ based on your environment.
-         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](../../../../img/firefox-contributors-guide/emacs.webp)
+         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png)
       1. Edit your commit message in Emacs
       2. Save and exit from Emacs by either
          1. Selecting the floppy disk icon then selecting the X icon to exit

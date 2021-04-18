@@ -11,7 +11,7 @@ topics: ['CLI', 'CI', 'Puppeteer', 'NPM']
 
 ## Why I created this tool
 
-![HTML to PDF CI tool in action](/img/htmlToPdfCI/app.gif)
+![HTML to PDF CI tool in action](assets/htmlToPdfCI/app.gif)
 In the process of creating my new static site, I noticed I was regenerating my resume PDF whenever I updated the source HTML.
 Since the PDF is derivative of the HTML, I didn't want to maintain two sources of truth.
 My friend, [Dylan](https://dylansheffer.com), suggested that I create a continuous integration (CI) module to generate this PDF on build.
@@ -100,7 +100,7 @@ In order to place the PDF in a directory somewhere, we will use Node's `fs` modu
 
 In order to called the generated PDF a success, it has to pass some test.
 In this instance, I have my reference resume PDF that I will compare against.
-> ![Reference Resume](../../../../img/htmlToPdfCI/reference-resume.webp)
+> ![Reference Resume](assets/htmlToPdfCI/reference-resume.webp)
 
 ### Generating the PDF
 
@@ -165,7 +165,7 @@ const express = require('express');
 ```
 
 Using this snippet, we are able to generate the following PDF
-> ![First generated resume](../../../../img/htmlToPdfCI/first-generated-resume.webp)
+> ![First generated resume](assets/htmlToPdfCI/first-generated-resume.webp)
 
 which is better than no generated PDF, but is missing some details.
 First, there are no margins which makes this document look terrible!
@@ -208,7 +208,7 @@ const express = require('express');
 })();
 ```
 We go ahead and run this snippet and...
-> ![Final generated resume](../../../../img/htmlToPdfCI/final-generated-resume.webp)
+> ![Final generated resume](assets/htmlToPdfCI/final-generated-resume.webp)
 
 🎉 sweet!
 We now have the main logic figured out, we now need to extract magic strings and variables so that passed parameters create the variables we need!
@@ -269,4 +269,3 @@ I originally created the tool to work with static site generators and specifical
 Again, after receiving feedback, I've made changes that allow more people to use this tool in a workflow that makes sense to them.
 Now, after this work, there is another prompt-based CLI/CI PDF creation tool available for use on NPM.
 Feel free to use this tool in your workflow and open any relevant issues in [the GitHub repository](https://github.com/our-weekend-project/html-to-pdf-ci)!
-
