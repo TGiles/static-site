@@ -20,7 +20,7 @@ const main = () => {
         for (let i = 0; i < files.length; i++) {
             let dir = path.dirname(files[i]);
             dir = dir.replace("assets", "img");
-            const made = mkdirp.sync(dir);
+            mkdirp.sync(dir);
 
             for (let j = 0; j < widths.length; j++) {
                 const extension = path.extname(files[i]);

@@ -55,26 +55,40 @@ const readingTime = article => {
     const minText = Math.ceil(textCount / readingSpeed);
     const min = minText + minImages;
     estimatedTime = min;
-    if (estimatedTime === 1) {
-        return `${estimatedTime} min read`;
-    } else {
-        return `${estimatedTime} min read`;
+
+    return `${estimatedTime} min read`;
+};
+
+/** Converts markdown img assets to the correct file format and fixes their src attribute 
+ * so that they can be rendered without issue
+ *
+ *
+ * @param {Token} token
+ */
+const buildImage = token => {
+    let src = token.attrGet("src");
+    let fileExtension = src.split(".").pop();
+    src = src.replace("assets", "../../../../img");
+    if (fileExtension === "png") {
+        src = src.replace("png", "webp");
     }
+    token.attrSet("src", src);
+
 };
 
 module.exports = (eleventyConfig) => {
     const markdownIt = require('markdown-it');
     const markdownGithubHeadings = require('markdown-it-github-headings');
     const markdownItAttrs = require('markdown-it-attrs');
-    let options = {
+    let markdownItOptions = {
         html: true,
         breaks: false,
         linkify: true
     };
     let githubHeadingOptions = {
         prefixHeadingIds: false
-    }
-    let markdownLib = markdownIt(options)
+    };
+    let markdownLib = markdownIt(markdownItOptions)
         .use(markdownItAttrs)
         .use(markdownGithubHeadings, githubHeadingOptions);
     markdownLib.renderer.rules.fence = function (tokens, idx, options, env, slf) {
@@ -83,7 +97,7 @@ module.exports = (eleventyConfig) => {
         let langName = '';
         let i;
         let tmpAttrs;
-        let highlighted
+        let highlighted;
         if (info) {
             langName = info.split(/\s+/g)[0];
             highlighted = Prism.highlight(token.content, Prism.languages[langName], langName);
@@ -99,7 +113,7 @@ module.exports = (eleventyConfig) => {
             }
 
             // Fake token just to render attributes
-            tmpToken = {
+            let tmpToken = {
                 attrs: tmpAttrs
             };
 
@@ -109,6 +123,21 @@ module.exports = (eleventyConfig) => {
 
         }
     };
+    /* See also: https://github.com/markdown-it/markdown-it/blob/df4607f1d4d4be7fdc32e71c04109aea8cc373fa/lib/renderer.js#L93-L105 */
+    markdownLib.renderer.rules.image = function (tokens, idx, options, env, slf) {
+        var token = tokens[idx];
+        buildImage(token);
+
+        // "alt" attr MUST be set, even if empty. Because it's mandatory and
+        // should be placed on proper position for tests.
+        //
+        // Replace content with actual value
+
+        token.attrs[token.attrIndex('alt')][1] =
+            slf.renderInlineAsText(token.children, options, env);
+
+        return slf.renderToken(tokens, idx, options);
+    }
     eleventyConfig.setLibrary('md', markdownLib);
     eleventyConfig.addFilter('dateIso', date => {
         let _date = new Date(date);
@@ -120,8 +149,8 @@ module.exports = (eleventyConfig) => {
         return _date.toLocaleDateString();
     });
 
-    eleventyConfig.addFilter('copyrightYear', date => {
-        let _date = new Date(date);
+    eleventyConfig.addFilter('copyrightYear', () => {
+        let _date = new Date();
         return _date.getFullYear();
     });
 
@@ -192,7 +221,8 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(imagesResponsiver, presets);
 
     eleventyConfig.addPassthroughCopy("img/**/*.*");
-    eleventyConfig.addPassthroughCopy("resume");
+    eleventyConfig.addPassthroughCopy("resume/img/background.png");
+    eleventyConfig.addPassthroughCopy("resume/Tim-Giles-Resume.pdf");
 
     eleventyConfig.addCollection('post', collection => {
         const posts = collection.getFilteredByTag('post');

@@ -9,7 +9,7 @@ topics: ['CLI', 'accessibility', 'Lighthouse', 'automation']
 
 # Fixing up auto-lighthouse
 
-![auto-lighthouse running an audit](/img/updating-auto-lighthouse/auto-lighthouse.gif)
+![auto-lighthouse running an audit](assets/updating-auto-lighthouse/auto-lighthouse.gif)
 Recently my auto-lighthouse package has been receiving more attention from the community at large.
 Because of this extra attention, I decided to add some features that were missing and fix some bugs that I was unaware of.
 I ended up fixing my broken blocked list, thanks to [César Valadez](https://github.com/cesasol) for the initial fix which led to a more permanent fix.
