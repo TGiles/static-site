@@ -60,9 +60,47 @@ To avoid this issue, please use either of the following: `hg commit --amend` or 
 
 `hg commit --amend` is useful for modifying a single commit, since it allows you to change both the message and the commit's content.
 This will probably be the more used option, especially when going through the patch feedback and approval process.
-If you wish to change only the commit message of a certain commit, follow these steps:
+If you **need to change the contents of your commit**, say if a reviewer has requested changes to your patch, follow these steps:
 1. Checkout the commit you wish to modify, `hg up <your commit ID>`
+   1. For example, let's say I have the following commit in my log: `123456:afb128ad9201 tgiles Bug 1702336 - Disable "signon.management.page.fileImport.enabled" for all channels. r=sfoster`
+   2. I would need to note either `123456` or `afb128ad9201` for the commit ID I want to use, so run `hg up 123456` to update to that commit
+   3. `123456` happens to be a linear numbering of changesets in your repository and is _only applicable to your repository instance_`
+   4. `afb128ad9201` is the commit hash that, generally, you should refer to
+      1. Mozilla's workflow is a bit different than a standard Git or HG repository so there is a chance that `afb128ad9201` doesn't actually exist for other people...even when you submit your changeset to Phabricator! Just something to be aware of.
+2. Run `hg status` to see a high level overview of your changes
+   1. This will show which files have been modified, added, or deleted, which is useful for a confidence check to ensure you're submitting your intended changes
+3. Run `hg diff` to see a detailed overview of your changes
+   1. This will show, line-by-line, what has been added or deleted, which, again, is useful for a confidence check to ensure you're submitting your intended changes.
+4. Run `hg commit --amend`
+   1. This will amend your current commit, in our example case `afb128ad9201`, to pull in the new changes you have made (if you've made any).
+   2. This will pull in every change shown by `hg status` so ensure that you're only committing what you expected to commit.
+5. Depending on your operating system and the terminal you are using, the following could happen
+   1. On Windows, the Emacs editor should appear, but a terminal code editor _may appear instead_ based on your environment.
+         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png)
+      1. If needed, edit your commit message in Emacs
+      2. Save and exit from Emacs by either
+         1. Selecting the floppy disk icon then selecting the X icon to exit
+         2. File > Save, then File > Close
+   2. On Mac or Linux, most likely a terminal code editor will appear...probably [Vim](https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started) or [Nano](https://phoenixnap.com/kb/use-nano-text-editor-commands-linux)
+      1. If needed, edit the commit message in the editor that appears
+      2. Save and exit from the editor
+6. Run `hg wip` and find your newly updated commit
+   1. **Note:** the linear commit number as well as the commit hash will be different now!
+   2. In our example case, the new identifiers might be `123457` and `0a212fa19251`
+7. Run `hg diff -c 123457` or `hg diff -c 0a212fa19251`
+   1. This will allow you to verify your changes were amended into that commit
+8. Submit your updated patch through Phabricator via `moz-phab submit` 🎉
+
+If you **wish to change only the commit message of a certain commit**, follow these steps:
+1. Checkout the commit you wish to modify, `hg up <your commit ID>`
+   1. For example, let's say I have the following commit in my log: `123456:afb128ad9201 tgiles Bug 1702336 - Disable "signon.management.page.fileImport.enabled" for all channels`
+   2. I would need to note either `123456` or `afb128ad9201` for the commit ID I want to use
+   3. `123456` happens to be a linear numbering of changesets in your repository and is _only applicable to your repository instance_`
+   4. `afb128ad9201` is the commit hash that, generally, you should refer to
+      1. Mozilla's workflow is a bit different than a standard Git or HG repository so there is a chance that `afb128ad9201` doesn't actually exist for other people...even when you submit your changeset to Phabricator!
 2. Run `hg commit --amend`
+   1. This will amend your current commit, in our example case `afb128ad9201`, to pull in the new changes you have made (if you've made any).
+   2. This will pull in every change shown by `hg status` so ensure that you're only committing what you expected to commit.
 3. Depending on your operating system and the terminal you are using, the following could happen
    1. On Windows, the Emacs editor should appear, but a terminal code editor _may appear instead_ based on your environment.
          1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png)
@@ -73,7 +111,7 @@ If you wish to change only the commit message of a certain commit, follow these 
    2. On Mac or Linux, most likely a terminal code editor will appear...probably [Vim](https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started) or [Nano](https://phoenixnap.com/kb/use-nano-text-editor-commands-linux)
       1. Edit the commit message in the editor that appears
       2. Save and exit from the editor
-4. Afterwards, run `hg wip` and the resulting log should show your updated message! 🎉
+4. Afterwards, run `hg wip` and the resulting log should show your updated message on your updated commit! 🎉
 
 #### `hg histedit`
 
