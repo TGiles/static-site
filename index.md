@@ -33,9 +33,7 @@ The most recent band I was in is [DOWNHAUL](https://downhaul.bandcamp.com).
 They are an excellent group of guys that make great music.
 They're hard to characterize, but I'd say some blend of country/indie/emo is my way of looking at them.
 On the other side of creativity, I enjoy photography and capturing everyday moments.
-I currently use a Nikon D3300 with 35mm, 18-55mm, and 55-300mm lenses.
-I think the second camera I'm going to pick up will be a Fuji X100V.
-Some of my shots can be seen on my [Flickr](https://www.flickr.com/photos/121209804@N07).
+I'm currently trying to find a point and shoot camera that I like, so that I can focus less on zooming and more on composing...but haven't decided on anything yet.
 
 I think one day I'd like to run a record label.
 I spent way too much time listening and analyzing music, so maybe that's a way to expand myself.
