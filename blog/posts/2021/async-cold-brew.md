@@ -326,56 +326,56 @@ async function getCoffeeBeans() {
 async function loadCoffeeGrinder() {
   console.log("loading coffee grinder");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("loaded coffee grinder!")), 3000);
+    setTimeout(() => resolve(console.log("loaded coffee grinder!")), 10000);
   });
 }
 
 async function grindCoffeeBeans() {
   console.log("grinding coffee beans");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("coffee grinder is finished")), 12000);
+    setTimeout(() => resolve(console.log("coffee grinder is finished")), 25000);
   });
 }
 
 async function moveGroundCoffeeToFilter() {
   console.log("filling filter with ground coffee");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filter filled with coffee")), 2000);
+    setTimeout(() => resolve(console.log("filter filled with coffee")), 6000);
   });
 }
 
 async function putFilterInCoffeeMaker() {
   console.log("putting filter back in coffee maker");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filter added to coffee maker")), 1000);
+    setTimeout(() => resolve(console.log("filter added to coffee maker")), 5000);
   });
 }
 
 async function fillMugWithWater() {
   console.log("filling mug with water for coffee maker!");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filled mug with water")), 6000);
+    setTimeout(() => resolve(console.log("filled mug with water")), 20000);
   });
 }
 
 async function loadCoffeeMakerWithWater() {
   console.log("filling coffee maker with water");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filled coffee maker with water")), 3000);
+    setTimeout(() => resolve(console.log("filled coffee maker with water")), 7000);
   });
 }
 
 async function addIceToMug() {
   console.log("grabbing ice for mug");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("added ice to mug")), 6000);
+    setTimeout(() => resolve(console.log("added ice to mug")), 13000);
   });
 }
 
 async function startCoffeeMaker() {
   console.log("starting coffee maker");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("coffee maker is done!")), 30000);
+    setTimeout(() => resolve(console.log("coffee maker is done!")), 60000);
   });
 }
 
@@ -420,7 +420,7 @@ let readyCoffee = await makeIcedCoffee();
 
 ```
 
-Following along in the console, we see that it takes around 38 seconds for this entire process to occur.
+Following along in the console, we see that it takes around 91 seconds for this entire process to occur.
 Again, let's see if we can break up some of these tasks into independent subtasks.
 
 
@@ -453,38 +453,56 @@ async function makeIcedCoffee() {
 let readyCoffee = await makeIcedCoffee();
 ```
 
-If you're following along, you may have noticed that our total time _actually_ increased to 56 seconds in this scenario!
+If you're following along, you may have noticed that our total time _actually_ increased to 126 seconds in this scenario!
 Let's dig in and find out why.
-The main culprit is the three await statements after the `grindCoffeeStep`.
-The `grindCoffeeStep` takes 12 seconds to complete, while the three steps after this take a total of 6 + 3 + 6 or 15 seconds.
-This means we aren't queuing up our work correctly!
-Let's go ahead and fix this.
+My initial hunch is that there's an overhead we're paying by sending these tasks to other threads to complete.
+No calculation we do is free unfortunately.
+Let's go ahead and try to fix this.
 
-**Hmm, I need to fix this**.
+
+```js
+
+async function coffeeSteps() {
+  await getCoffeeBeans();
+  await loadCoffeeGrinder();
+  await grindCoffeeBeans();
+  await moveGroundCoffeeToFilter();
+  await putFilterInCoffeeMaker();
+}
+
+async function mugSteps() {
+  await fillMugWithWater();
+  await loadCoffeeMakerWithWater();
+  await addIceToMug();
+}
+
+```
 
 ```js
 async function makeIcedCoffee() {
   console.time("make iced coffee");
-
-  let coffeeSteps = getCoffeeBeans().then(loadCoffeeGrinder()).then(grindCoffeeBeans());
-  let mugSteps = fillMugWithWater().then(loadCoffeeMakerWithWater()).then(addIceToMug());
-
-  await coffeeSteps;
-  console.time("move coffee");
-  await moveGroundCoffeeToFilter();
-  console.timeEnd("move coffee");
-
-  console.time("move filter");
-  await putFilterInCoffeeMaker();
-  console.timeEnd("move filter");
-
-  await mugSteps;
-  console.time("start machine");
+  let coffeePromises = coffeeSteps();
+  let mugPromises = mugSteps();
+  await Promise.all([coffeePromises, mugPromises]);
   await startCoffeeMaker();
-  console.timeEnd("start machine");
-  
   console.timeEnd("make iced coffee");
 }
 
 let readyCoffee = await makeIcedCoffee();
 ```
+
+This snippet runs at 111 seconds...so slightly better than before!
+Again, no calculation is free and we're able to see that in this case.
+Given that computers can perform calculations very quickly, the overhead of creating threads to then wait around is greater than simply awaiting each step in the main `makeIcedCoffee` process.
+This is why measuring before and after is _a must_ when dealing with these kind of performance issues!
+I would highly recommend figuring out how to use your browser's profiler in order to get better before and after metrics of your changes.
+
+## Summary
+
+Dealing with asynchronous tasks is difficult!
+When designing applications, interfaces, user experiences, etc. we want to avoid blocking the user if we are able.
+Converting your synchronous tasks to asynchronous is not a cure-all!
+We saw in the iced coffee example where creating all these threads and the additional functions overhead actually caused a longer run time overall.
+To be sure you're actually solving performance problems, you **must** measure before and after your changes.
+Otherwise, you won't be able to tell if your changes negatively or positively impacted performance concerns.
+If you can take advantage of idle time in a process, you should aim to utilize this downtime for other needed calculations.
