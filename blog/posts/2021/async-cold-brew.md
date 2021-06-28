@@ -11,7 +11,7 @@ topics: ['Promises', 'async/await', 'JavaScript']
 
 As I've noted in my [uses post](/uses), cold brew is my number one coffee choice.
 I don't like hot drinks, so I don't immediately reach for hot coffee when I need some caffeine.
-Instead, I go for something like cold brew, or icing down hot coffee instead.
+Instead, I go for something like [cold brew](https://www.simplyrecipes.com/recipes/how_to_make_cold_brew_coffee/) or [iced coffee](https://www.seriouseats.com/japanese-style-iced-coffee).
 
 Unlike the other forms of coffee I've listed, cold brew takes _significantly_ more time to make!
 Once it is ready though, it's simple as pouring some coffee from a carafe into your mug of choice.
@@ -44,8 +44,10 @@ What if, instead, we had a code snippet like this
 ```js
 function main() {
   let randomNumber = Math.floor(Math.random() * 7500);
-  setTimeout(() => console.log("hello world"), randomNumber);
-
+  setTimeout(
+    () => console.log("hello world"), 
+    randomNumber
+  );
 }
 
 main();
@@ -55,19 +57,19 @@ Almost contradictory in a sense, `main()` **would finish and keep executing func
 If the rest of our snippet needed to know that "hello world" was printed, then this pattern would not work at all!
 Additionally, since we don't know how long it will take to run `main()`, we could potentially hang up the entire program if we **really** need to wait for this console log!
 
-Later on, we'll see how to shift our thinking so that we can determine when we _really_ need to wait for tasks to finish versus coming back to a completed deferred task and using its returned value.
+Later on, we'll see how to shift our thinking so that we can determine when we _really_ need to wait for tasks to finish versus coming back to a completed deferred task and using its resolved value.
 
 ## We perform many of our tasks in an [async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await) pattern
 
 To help determine when to break up tasks into asynchronous pieces versus when we can't break up tasks, it's helpful to think of how we deal with this problem on a daily basis.
 Many daily or weekly tasks are comprised of a bunch of asynchronous steps that we utilize to take full advantage of our time.
-A few examples off the top of my head, doing laundry, cooking dinner, commuting to work, and plenty of others that I'm not thinking of at this moment.
+A few examples off the top of my head: doing laundry, cooking dinner, commuting to work, and plenty of others that I'm not thinking of at this moment.
 At any rate, let's break down my few examples so we can start to see the async/await pattern in this.
 
 Doing laundry is comprised of some synchronous tasks and asynchronous tasks.
-By organizing the steps in such a way that minimize our idle time, we can be more efficient in this chore.
-Since there's only one of you, we can only do one active task at a time and so we should determine what our active, or blocking, tasks are.
-Personally, I've always had access to a washing machine and dryer, which changes up the task structure compared to hand washing...but let's explore both cases.
+By organizing the steps in such a way that minimize our idle time, we can be more efficient in this chore...at least in terms of idle time.
+Since there is only one of you, we can only do one active task at a time and so we should determine what our active, or blocking, tasks are.
+Personally, I've always had access to a washing machine and dryer, which changes up the task structure compared to hand washing but let's explore both cases.
 
 For the case of a washing machine and a dryer, my ordered steps would look like this:
 - Gather dirty laundry
@@ -97,8 +99,9 @@ What would end up happening could look something like this instead:
 - Start dryer
 - Start folding non-existent clean laundry
 - Put non-existent clean laundry away
+
 This sequence is **definitely** not the way to do laundry!
-We need to wait when the steps tell us to wait, but we don't need to _actively wait_ for this task to finish...we can do other things in the mean time!
+We need to wait when the steps tell us to wait, but we don't need to _actively wait_ for this task to finish...we can do other things in the meantime!
 
 For the other case, hand washing and hand drying, let's see where things differ and where things are similar:
 - Gather dirty laundry
@@ -111,6 +114,7 @@ For the other case, hand washing and hand drying, let's see where things differ 
 - Gather clean laundry
 - Fold laundry
 - Put away laundry
+
 The major difference is that washing is a blocking task now, but we can start the drying process immediately when we are done with one piece of laundry unlike in the washing machine case.
 As with the washing machine case, we can't simply throw an async in front of these steps and get the exact result we want!
 However, we can get some other work done during the "hang laundry out to dry" step.
@@ -127,14 +131,14 @@ Given what we know about breaking a task down into sub-tasks, let's do the same 
 - Fill carafe with water
 - Store in fridge
 
-For those of you who are unfamiliar with cold brew brewing, the majority of these steps look pretty similar to other brewing methods.
-The major difference though, is the temperature of the water we're using to brew the coffee.
+For those of you who are unfamiliar with the cold brew process, most of these steps look pretty similar to other brewing methods.
+The major difference though is the temperature of the water we're using to brew the coffee.
 As the name implies, we are using cold water, not hot water!
-Hot water, essentially, extracts the flavor and caffeine from the ground coffee almost instantaneously...while cold water absolutely does not extract instantaneously.
-While the entire process of making hot coffee is a few minutes, the [entire process of making cold brew is a minimum of **12 hours**](https://www.simplyrecipes.com/recipes/how_to_make_cold_brew_coffee/).
+Hot water, essentially, extracts the flavor and caffeine from the ground coffee almost instantaneously...while cold water does not extract instantaneously.
+While the entire process of making hot coffee is a few minutes, the [entire process of making cold brew is a minimum of 12 hours](https://www.simplyrecipes.com/recipes/how_to_make_cold_brew_coffee/)!
 
 If we made cold brew synchronously, we would need to stay awake and idle in front of the fridge for a minimum of 12 hours!
-This is an absolute waste of time and resources, there has to be a better way.
+This is an absolute waste of time and resources...there has to be a better way.
 In this case there is, we can break some of these tasks up into asynchronous pieces and work on other active tasks while waiting for async tasks to finish up.
 
 ## Using promises and async/await is a wonderful way to make cold brew
@@ -145,49 +149,63 @@ In order to show how the asynchronous process would look in code, let's first st
 async function getCoffeeBeans() {
   console.log("Grabbing a bag of coffee");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("Grabbed a bag of coffee")), 5000);
+    setTimeout(
+      () => resolve(console.log("Grabbed a bag of coffee")),
+      5000);
   });
 }
 
 async function loadCoffeeGrinder() {
   console.log("loading coffee grinder");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("loaded coffee grinder!")), 3000);
+    setTimeout(
+      () => resolve(console.log("loaded coffee grinder!")),
+      3000);
   });
 }
 
 async function grindCoffeeBeans() {
   console.log("grinding coffee beans");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("coffee grinder is finished")), 12000);
+    setTimeout(
+      () => resolve(console.log("coffee grinder is finished")),
+      12000);
   });
 }
 
 async function moveGroundCoffeeToFilter() {
   console.log("filling filter with ground coffee");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filter filled with coffee")), 5000);
+    setTimeout(
+      () => resolve(console.log("filter filled with coffee")),
+      5000);
   });
 }
 
 async function putFilterInCarafe() {
   console.log("loading carafe with filter");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filter placed!")), 2000);
+    setTimeout(
+      () => resolve(console.log("filter placed!")),
+      2000);
   });
 }
 
 async function fillCarafeWithWater() {
   console.log("filling carafe with water");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("carafe is filled!")), 30000);
+    setTimeout(
+      () => resolve(console.log("carafe is filled!")),
+      30000);
   });
 }
 
 async function storeCarafeInFridge() {
   console.log("storing carafe in fridge");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("carafe stored")), 5000);
+    setTimeout(
+      () => resolve(console.log("carafe stored")), 
+      5000);
   });
 }
 
@@ -196,7 +214,9 @@ async function waitForBrew() {
   // In real life, this timeout would be 43,320,000 millseconds!
   // But for demonstration purposes, we'll set this to 2 minutes
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("brewing is done")), 120000);
+    setTimeout(
+      () => resolve(console.log("brewing is done")), 
+      120000);
   });
 }
 
@@ -246,23 +266,30 @@ Unfortunately, not really.
 While we've freed ourselves up if we have other high-level tasks happening, the actual `makeColdBrew` process is effectively synchronous.
 But how is it synchronous? 
 We added all the async/await steps so it should run asynchronously and free us up right?
+
 Unfortunately, this is not the case...we have to wait for each subtask to finish before moving on to the next one in our `makeColdBrew` function.
 Additionally, our cold brewing process is interrupted during each sub-task, if we've queued up some other tasks during our main loop!
 So while we're never blocked on our main thread now, which is a huge improvement compared to waiting 12 hours for the brew to finish, we aren't efficiently running through our cold brew process!
-Let's see what we can do to improve this, and we'll measure if we're making improvements or not by utilizing `console.time()`. Given this current implementation, it takes us **182 seconds to make our cold brew!**
+Let's see what we can do to improve this, and we'll measure if we're making improvements or not by utilizing `console.time()`. 
+Given this current implementation, it takes us **182 seconds to make our cold brew!**
 
 Something we've noticed is that we don't need to wait for the filter to be in the carafe before filling it with water, so let's add a `partiallyFillCarafeWithWater()` function so we spend less time waiting for all the water to flow though our ground coffee.
 
 ```js
 async function partiallyFillCarafeWithWater() {
   console.log("Adding some water to carafe!");
-  await setTimeout(() => console.log("added some water."), 3000);
-  return true;
+  return new Promise(resolve => {
+    setTimeout(
+      () => resolve(console.log("added some water.")),
+      3000);
+  });
 }
 async function fillCarafeWithWater() {
   console.log("filling carafe with water");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("carafe is filled!")), 27000);
+    setTimeout(
+      () => resolve(console.log("carafe is filled!")),
+      27000);
   });
 }
 ```
@@ -297,8 +324,7 @@ let readyCoffee = await makeColdBrew();
 One thing you'll notice in your console with this updated implementation is that "Adding some water to carafe!" immediately follows "Grabbing a bag of coffee", instead of "grabbed a bag of coffee". This is because of the asynchronous nature of the `getCoffeeBeans()` and `partiallyFillCarafeWithWater()` functions.
 JavaScript calls `getCoffeeBeans` which immediately logs "Grabbing a bag of coffee" and returns a Promise.
 Then we call `partiallyFillCarafeWithWater` which immediately logs "Adding some water to carafe!" and returns a Promise.
-Since the promise returned by the carafe resolves quicker than the beans promise, we end up logging "added some water" before "Grabbed a bag of coffee".
-
+Since the promise returned by the carafe resolves quicker than the beans promise, we end up logging "added some water" before logging "Grabbed a bag of coffee".
 
 In this case, we're going to measure the overall time and compare to our previous implementations. The synchronous implementation, given that the example brew time is two minutes, would take 180 seconds of blocking time.
 If we were using the true brew time, it would take 12+ hours of blocking time.
@@ -319,63 +345,81 @@ As before, let's go ahead and define the steps I take to make iced coffee
 async function getCoffeeBeans() {
   console.log("Grabbing a bag of coffee");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("Grabbed a bag of coffee")), 5000);
+    setTimeout(
+      () => resolve(console.log("Grabbed a bag of coffee")),
+      5000);
   });
 }
 
 async function loadCoffeeGrinder() {
   console.log("loading coffee grinder");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("loaded coffee grinder!")), 10000);
+    setTimeout(
+      () => resolve(console.log("loaded coffee grinder!")),
+      10000);
   });
 }
 
 async function grindCoffeeBeans() {
   console.log("grinding coffee beans");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("coffee grinder is finished")), 25000);
+    setTimeout(
+      () => resolve(console.log("coffee grinder is finished")),
+      25000);
   });
 }
 
 async function moveGroundCoffeeToFilter() {
   console.log("filling filter with ground coffee");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filter filled with coffee")), 6000);
+    setTimeout(
+      () => resolve(console.log("filter filled with coffee")),
+      6000);
   });
 }
 
 async function putFilterInCoffeeMaker() {
   console.log("putting filter back in coffee maker");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filter added to coffee maker")), 5000);
+    setTimeout(
+      () => resolve(console.log("filter added to coffee maker")),
+      5000);
   });
 }
 
 async function fillMugWithWater() {
   console.log("filling mug with water for coffee maker!");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filled mug with water")), 20000);
+    setTimeout(
+      () => resolve(console.log("filled mug with water")),
+      20000);
   });
 }
 
 async function loadCoffeeMakerWithWater() {
   console.log("filling coffee maker with water");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("filled coffee maker with water")), 7000);
+    setTimeout(
+      () => resolve(console.log("filled coffee maker with water")),
+      7000);
   });
 }
 
 async function addIceToMug() {
   console.log("grabbing ice for mug");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("added ice to mug")), 13000);
+    setTimeout(
+      () => resolve(console.log("added ice to mug")),
+      13000);
   });
 }
 
 async function startCoffeeMaker() {
   console.log("starting coffee maker");
   return new Promise(resolve => {
-    setTimeout(() => resolve(console.log("coffee maker is done!")), 60000);
+    setTimeout(
+      () => resolve(console.log("coffee maker is done!")),
+      60000);
   });
 }
 
@@ -494,7 +538,7 @@ let readyCoffee = await makeIcedCoffee();
 This snippet runs at 111 seconds...so slightly better than before!
 Again, no calculation is free and we're able to see that in this case.
 Given that computers can perform calculations very quickly, the overhead of creating threads to then wait around is greater than simply awaiting each step in the main `makeIcedCoffee` process.
-This is why measuring before and after is _a must_ when dealing with these kind of performance issues!
+This is why measuring before and after is **a must** when dealing with these kind of performance issues!
 I would highly recommend figuring out how to use your browser's profiler in order to get better before and after metrics of your changes.
 
 ## Summary
