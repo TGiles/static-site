@@ -70,7 +70,7 @@ This is not a huge problem however, since I can still create responsive GIFs the
 ## Creating accessible fenced code blocks
 
 At first, I was using a plugin [eleventy-plugin-syntaxhighlight](https://www.11ty.dev/docs/plugins/syntaxhighlight/) for syntax highlighting, but was unable to add `tabindex` to my fenced blocks.
-Since some of my code blocks, as seen in my [HTML to PDF CI post](../htmlToPdcCI.md), are scrollable, I needed a way for keyboard users to interact with the blocks.
+Since some of my code blocks, as seen in my [HTML to PDF CI post](../htmlToPdfCI), are scrollable, I needed a way for keyboard users to interact with the blocks.
 This is where my custom markdown fence renderer with [Prism.js](https://prismjs.com/) comes into play.
 Watch out if you're using Prism in a Node environment, since you have to initialize it differently than what the docs show.
 For example
