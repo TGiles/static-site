@@ -1,0 +1,24 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe"
+    },
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "C:\\mozilla-build\\start-shell.bat (migrated)": {
+      "path": "C:\\mozilla-build\\start-shell.bat",
+      "args": []
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
