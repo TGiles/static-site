@@ -40,26 +40,26 @@ main {
 }
 
 .wrapperLeft {
-    margin-top: 1rem;
-    margin-right: 2.5rem;
+    margin-block-start: 1rem;
+    margin-inline-end: 2.5rem;
 }
 
 .wrapperLeft li {
-    margin-bottom: 0.25rem;
+    margin-block-end: 0.25rem;
 }
 .wrapperLeft li:last-of-type {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 h2 {
-    margin-bottom: 0.75rem;
-    border-bottom: 0.5rem solid #34C4C8;
+    margin-block-end: 0.75rem;
+    border-block-end: 0.5rem solid #34C4C8;
     text-transform: uppercase;
     font-family: 'Hack', serif;
 }
 
 h2.objective-header {
-    margin-top: 0.25rem;
+    margin-block-start: 0.25rem;
 }
 
 ul {
@@ -80,11 +80,11 @@ li {
 
 .experience-blurb, .education-blurb, .personal-projects-blurb {
     line-height: 1.25rem;
-    padding-bottom: 0.5rem;
+    padding-block-end: 0.5rem;
 }
 
 .experience-blurb:last-of-type, .education-blurb:last-of-type, .personal-projects-blurb:last-of-type {
-    padding-bottom:  0;
+    padding-block-end:  0;
 }
 .thesis-text, .honors-text {
     font-style: italic;
@@ -104,7 +104,7 @@ li {
 }
 .contact-info i {
     font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-block-end: 0.75rem;
 }
 
 .icon-envelope, .icon-phone, .icon-linkedin2 {
@@ -142,7 +142,7 @@ a:focus, a:hover {
     .heading-wrap {
         padding: 0.75rem 1.25rem 1.25rem 10rem;
     }
-    .bigWrapper {
+    .mainContentWrapper {
         display: flex;
         flex-direction: column;
         margin: 0;
@@ -154,12 +154,12 @@ a:focus, a:hover {
 }
 
 @media screen and (max-width: 835px) {
-    .bigWrapper {
+    .mainContentWrapper {
         margin: 0 1rem;
     }
     footer {
         margin: auto 0 1rem 0;
-        padding-top: 1rem;
+        padding-block-start: 1rem;
     }
 }
 
