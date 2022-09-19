@@ -1,6 +1,6 @@
 ---
 layout: home-layout.njk
-title: Tim Giles - Full Stack Developer
+title: Tim Giles - Front End Developer
 tags: ['navigation']
 ---
 
@@ -24,7 +24,7 @@ My thesis was the most challenging thing I have done to date.
 Because of this thesis, I understand robotics better.
 I also understand the tools and frameworks, such as [ROS](https://www.ros.org/) that roboticists use to create applications.
 
-I've worked as a full stack developer, software engineer, graduate lab assistant, tutor, and tech camp instructor across eight years.
+I've worked as a front-end developer, full stack developer, software engineer, graduate lab assistant, tutor, and tech camp instructor across ten years.
 I enjoy learning exciting and relevant technologies, and automation processes.
 Thanks to my thesis, I've learned that I enjoy robotics and AI...at least from a software perspective.
 
