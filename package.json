@@ -27,7 +27,7 @@
     "@11ty/eleventy-navigation": "^0.1.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@gumlet/gif-resize": "^1.1.1",
-    "@our-weekend-project/html-to-pdf-ci": "^0.1.3",
+    "@our-weekend-project/html-to-pdf-ci": "^0.1.4",
     "clean-css": "^4.2.3",
     "eleventy-plugin-images-responsiver": "^1.5.3",
     "express": "^4.17.1",
