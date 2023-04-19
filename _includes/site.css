@@ -33,7 +33,7 @@ html {
     background-color: #181a1b;
     color: white;
     scrollbar-color: dark;
-    font-family: Muli;
+    font-family: Muli, sans-serif;
     font-size: var(--font-125);
     line-height: var(--line-height);
     height: 100vh;
@@ -184,7 +184,7 @@ code {
 }
 
 p {
-    font-family: 'Muli';
+    font-family: 'Muli', sans-serif;
     line-height: var(--line-height);
 }
 
@@ -210,7 +210,7 @@ main {
 
 footer {
     grid-column: 2 / 2;
-    font-family: 'Muli';
+    font-family: 'Muli', sans-serif;
     margin-top: 0.5rem;
     margin-bottom: 1.0rem;
 }
