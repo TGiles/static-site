@@ -239,6 +239,21 @@ nav>div {
     flex-flow: column nowrap;
 }
 
+@media screen and (min-width: 768px) {
+    nav>div.larger-sidebar-section {
+        min-height: 550px;
+    }
+    nav>div {
+        min-height: 320px;
+    }
+    nav>div>a {
+        flex: 3;
+    }
+    nav>div>a>i {
+        display: inline-block;
+    }
+}
+
 nav a:focus,
 nav a:hover,
 div.post-navigation a:hover {
