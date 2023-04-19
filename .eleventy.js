@@ -72,6 +72,12 @@ const buildImage = token => {
     if (fileExtension === "png") {
         src = src.replace("png", "webp");
     }
+    if (fileExtension === "gif") {
+        src = src.replace("gif", "webp");
+    }
+    if (fileExtension === "jpg" || fileExtension === "jpeg") {
+        src = src.replace("jpg", "webp");
+    }
     token.attrSet("src", src);
 
 };

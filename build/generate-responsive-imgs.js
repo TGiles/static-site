@@ -3,9 +3,29 @@ const path = require('path');
 const glob = require('glob');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
-const gifResize = require('@gumlet/gif-resize');
 
-// const webp = require('webp-converter');
+const createImageDirectory = (directoryName) => {
+    let dir = path.dirname(directoryName);
+    dir = dir.replace("assets", "img");
+    mkdirp.sync(dir);
+    return dir;
+}
+
+const createAnimatedWebp = async (gifFile, width, outputPath) => {
+    await sharp(gifFile, { animated: true }).resize(width).toFile(outputPath);
+}
+
+const createStaticWebp = async (stillFile, width, outputPath) => {
+    await sharp(stillFile).resize(width).toFile(outputPath);
+}
+
+const createFavicon = async (faviconFile, outputPath) => {
+    await sharp(faviconFile).resize(32).toFile(outputPath);
+}
+
+const createProfilePicture = async (profilePictureFile, width, outputPath) => {
+    await sharp(profilePictureFile).resize(width).toFile(outputPath);
+}
 
 const main = () => {
     glob("assets/**/*.+(png|jpg|jpeg|gif)", async function (err, files) {
@@ -18,52 +38,28 @@ const main = () => {
             console.log(`Generating images with the following widths: ${widths}`);
         }
         for (let i = 0; i < files.length; i++) {
-            let dir = path.dirname(files[i]);
-            dir = dir.replace("assets", "img");
-            mkdirp.sync(dir);
+            let dir = createImageDirectory(files[i]);
 
             for (let j = 0; j < widths.length; j++) {
                 const extension = path.extname(files[i]);
                 const base = path.basename(files[i], extension);
+                const outputPath = path.join(dir, `${base}-${widths[j]}.webp`);
                 if (extension === '.gif') {
-                    const outputPath = path.join(dir, `${base}-${widths[j]}${extension}`);
-                    const buffer = fs.readFileSync(files[i]);
-                    let transformedGif = await gifResize({
-                        width: widths[j]
-                    })(buffer);
-                    fs.writeFileSync(outputPath, transformedGif);
-                    // TODO: Figure out how to convert gifs to webm
-                    // 
-                    // const gif = fs.readFileSync(outputPath);
-                    // const outputWebm = path.join(dir, `${base}-${widths[j]}.webm`);
-                    // webp.gwebp(outputPath, outputWebm, "-q 80", function (status, error) {
-                    //     console.log(status, error);
-                    //     fs.unlinkSync(outputPath);
-                    // });
-
+                    await createAnimatedWebp(files[i], widths[j], outputPath);
                 } else {
-                    const outputPath = path.join(dir, `${base}-${widths[j]}.webp`);
                     if (base.includes('favicon')) {
                         if (widths[j] === 250) {
-                            await sharp(files[i])
-                                .resize(32)
-                                .toFile(path.join(dir, `${base}${extension}`));
+                            await createFavicon(files[i], path.join(dir, `${base}${extension}`));
                             break;
                         }
                     }
                     else if (base.includes('profile')) {
                         if (widths[j] === 250) {
-                            await sharp(files[i])
-                                .resize(widths[j])
-                                .webp()
-                                .toFile(outputPath);
+                            await createProfilePicture(files[i], widths[j], outputPath);
                             break;
                         }
                     } else {
-                        await sharp(files[i])
-                            .resize(widths[j])
-                            .webp()
-                            .toFile(outputPath);
+                        await createStaticWebp(files[i], widths[j], outputPath);
                     }
 
                 }
