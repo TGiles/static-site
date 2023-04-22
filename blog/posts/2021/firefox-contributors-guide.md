@@ -34,7 +34,6 @@ When building Firefox, you will get the output, or artifacts, of the build in a 
 On Windows, this folder is `obj-x86_64-pc-mingw32` but will be different depending on your operating system and its architecture.
 Because of this build folder, there will be duplicate files, one source file and one built file.
 This can cause issues when searching for a file when using the "Quick Open, Go to File" feature (`Ctrl + P` on Windows and Linux, `Cmd + P` on Mac) in vscode.
-<!-- ![Visual Studio Code search bar showing duplicate files, one source file and one built source file](../../../../img/firefox-contributors-guide/duplicate-files-vscode.webp) -->
 ![Visual Studio Code search bar showing duplicate files, one source file and one built source file](assets/firefox-contributors-guide/duplicate-files-vscode.png)
 
 In the previous screenshot, the search results paths are listed as "toolkit/components/passwordmgr" then "obj-x86_64-pc-mingw32/dist/bin/modules".
