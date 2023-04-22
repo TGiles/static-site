@@ -75,7 +75,7 @@ If you **need to change the contents of your commit**, say if a reviewer has req
    2. This will pull in every change shown by `hg status` so ensure that you're only committing what you expected to commit.
 5. Depending on your operating system and the terminal you are using, the following could happen
    1. On Windows, the Emacs editor should appear, but a terminal code editor _may appear instead_ based on your environment.
-         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png)
+         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png){loading=lazy}
       1. If needed, edit your commit message in Emacs
       2. Save and exit from Emacs by either
          1. Selecting the floppy disk icon then selecting the X icon to exit
@@ -102,7 +102,7 @@ If you **wish to change only the commit message of a certain commit**, follow th
    2. This will pull in every change shown by `hg status` so ensure that you're only committing what you expected to commit.
 3. Depending on your operating system and the terminal you are using, the following could happen
    1. On Windows, the Emacs editor should appear, but a terminal code editor _may appear instead_ based on your environment.
-         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png)
+         1. Emacs looks like Notepad or Notepad++, if you've used these programs before ![Emacs GUI on Linux](assets/firefox-contributors-guide/emacs.png){loading=lazy}
       1. Edit your commit message in Emacs
       2. Save and exit from Emacs by either
          1. Selecting the floppy disk icon then selecting the X icon to exit

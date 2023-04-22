@@ -100,7 +100,7 @@ In order to place the PDF in a directory somewhere, we will use Node's `fs` modu
 
 In order to called the generated PDF a success, it has to pass some test.
 In this instance, I have my reference resume PDF that I will compare against.
-> ![Reference Resume](assets/htmlToPdfCI/reference-resume.webp)
+> ![Reference Resume](assets/htmlToPdfCI/reference-resume.webp){loading=lazy}
 
 ### Generating the PDF
 
@@ -165,7 +165,7 @@ const express = require('express');
 ```
 
 Using this snippet, we are able to generate the following PDF
-> ![First generated resume](assets/htmlToPdfCI/first-generated-resume.webp)
+> ![First generated resume](assets/htmlToPdfCI/first-generated-resume.webp){loading=lazy}
 
 which is better than no generated PDF, but is missing some details.
 First, there are no margins which makes this document look terrible!
@@ -208,7 +208,7 @@ const express = require('express');
 })();
 ```
 We go ahead and run this snippet and...
-> ![Final generated resume](assets/htmlToPdfCI/final-generated-resume.webp)
+> ![Final generated resume](assets/htmlToPdfCI/final-generated-resume.webp){loading=lazy}
 
 🎉 sweet!
 We now have the main logic figured out, we now need to extract magic strings and variables so that passed parameters create the variables we need!
