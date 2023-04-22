@@ -345,7 +345,8 @@ img {
     display: block;
     margin: auto;
     margin-bottom: 1rem;
-    width: auto;
+    width: 100%;
+    height: auto;
     border: 2px solid var(--old-lavender);
 }
 

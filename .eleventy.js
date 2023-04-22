@@ -210,7 +210,8 @@ module.exports = (eleventyConfig) => {
             maxWidth: 1200,
             fallbackWidth: 725,
             attributes: {
-                loading: 'lazy'
+                width: 963,
+                height: 900,
             }
         },
         "profile-img": {
@@ -220,7 +221,8 @@ module.exports = (eleventyConfig) => {
             steps: 1,
             sizes: '250px',
             attributes: {
-                loading: 'lazy'
+                width: 250,
+                height: 250,
             }
         }
     };
