@@ -21,11 +21,11 @@
 }
 
 @font-face {
-    font-family: 'Hack';
+    font-family: Hack;
+    src: url('/assets/fonts/Hack-Bold.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
     font-display: swap;
-    src: monospace, url("https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold-subset.woff2");
 }
 
 html {
@@ -150,7 +150,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Hack';
+    font-family: Hack;
     color: var(--powder-blue);
     position: relative;
 }
@@ -180,7 +180,7 @@ h1>a {
 
 nav,
 code {
-    font-family: 'Hack';
+    font-family: Hack;
 }
 
 p {

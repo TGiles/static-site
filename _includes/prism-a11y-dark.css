@@ -4,6 +4,14 @@
  * @author ericwbailey
  */
 
+ @font-face {
+    font-family: Hack;
+    src: url('/assets/fonts/Hack-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
  code[class*="language-"],
  pre[class*="language-"] {
      color: #f8f8f2;
