@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% set css %}
+  {% include "character-journal.css" %}
+  {% endset %}
+  <title>Document</title>
+  <style>
+    {{ css | safe}}
+  </style>
+</head>
+<body>
+  Test page for character sheet.
+  <div class="page-one">
+    <div class="top-box">
+      <div class="name-level-row">
+        <div class="name-box">
+          <span>Name</span>
+        </div>
+        <div class="level-box">
+          <span>Level</span>
+        </div>
+      </div>
+      <div class="class-race-row">
+        <div class="class-box">
+          <span>Class</span>
+        </div>
+        <div class="race-box">
+          <span>Race</span>
+        </div>
+      </div>
+    </div>
+    <div class="attributes-row">
+      <div class="strength-box"></div>
+      <div class="dexerity-box"></div>
+      <div class="constitution-box"></div>
+      <div class="intelligence-box"></div>
+      <div class="wisdom-box"></div>
+      <div class="charisma-box"></div>
+    </div>
+    <div class="skills-row">
+      <div class="skills-column-1"></div>
+      <div class="skills-column-2"></div>
+    </div>
+    <div class="passive-row">
+      <div class="passive-perception"></div>
+      <div class="passive-insight"></div>
+    <div>
+    <div class="weapons-armor-tool-language-row">
+      <div class="weapons-box"></div>
+      <div class="tools-and-language-box"></div>
+    </div>
+    <div class="foo"></div>
+  </div>
+
+  <div class="pagebreak"></div>
+  <div class="page-two"></div>
+</body>
+</html>

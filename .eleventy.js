@@ -231,6 +231,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("img/**/*.*");
     eleventyConfig.addPassthroughCopy("resume/img/background.png");
     eleventyConfig.addPassthroughCopy("resume/Tim-Giles-Resume.pdf");
+    // eleventyConfig.addPassthroughCopy("character-journal.css")
 
     eleventyConfig.addCollection('post', collection => {
         const posts = collection.getFilteredByTag('post');
@@ -245,4 +246,8 @@ module.exports = (eleventyConfig) => {
 
         return posts.reverse();
     });
+    
+    return {
+        HTMLTemplateEngine: "njk"
+    }
 }
